@@ -12,7 +12,8 @@ Tim sačinjavaju 4 člana:
 3. SpaxMK (Spasoja)
 4. dragoslavbabic (Dragoslav)
 
-Opravdanost projekta
+## Opravdanost projekta
+
 Organizacija 4WIN-TEAM je prepoznala poslovnu priliku u domenu hotela za ljubimce,
 u vidu nedostajućeg ONLINE rezervisanja prostora kod svih vlasnika ovakvih hotela u 
 celokupnom .RS domenu. 
