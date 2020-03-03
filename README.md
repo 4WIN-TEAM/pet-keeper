@@ -16,7 +16,7 @@ Tim sačinjavaju 4 člana:
 
 Organizacija 4WIN-TEAM je prepoznala poslovnu priliku u domenu hotela za ljubimce,
 u vidu nedostajućeg ONLINE rezervisanja prostora kod svih vlasnika ovakvih hotela u 
-celokupnom .RS domenu. 
+celokupnom .RS domenu.
 
 ## Okviri projekta
 
@@ -26,6 +26,7 @@ Projekat podrazumeva izradu web aplikacije koja će sadržati 4 modula:
 2. Modul za registraciju korisnika
 3. Modul za rezervaciju prostora
 4. Modul za administraciju prostora
+5. Modul za administraciju aplikacije (backend)
 
 ### Vremenska projekcija
 
