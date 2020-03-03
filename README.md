@@ -14,7 +14,7 @@ Tim sačinjavaju 4 člana:
 
 ## Cilj projekta
 
-Cilj ove web aplikacije treba da:
+Cilj projekta je izrada web aplikacije koja će posetiocima sajta pružiti:
 
 1. Omoguci korisnicima web aplikacije informisanje vezano za opste informacije o pansionu,
 2. Omoguci korisnicima web aplikacije uvid u smestajne kapacitete pansiona,
@@ -25,7 +25,7 @@ Cilj ove web aplikacije treba da:
 ## Opravdanost projekta
 
 Organizacija 4WIN-TEAM je prepoznala poslovnu priliku u domenu hotela za ljubimce,
-u vidu nedostajućeg ONLINE rezervisanja prostora kod svih vlasnika ovakvih hotela u 
+u vidu nedostajućeg ONLINE rezervisanja prostora kod svih vlasnika ovakvih hotela u
 celokupnom .RS domenu.
 
 ## Okviri projekta
