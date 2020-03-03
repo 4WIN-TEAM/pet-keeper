@@ -12,6 +12,16 @@ Tim sačinjavaju 4 člana:
 3. SpaxMK (Spasoja)
 4. dragoslavbabic (Dragoslav)
 
+## Cilj projekta
+
+Cilj ove web aplikacije treba da:
+
+1. Omoguci korisnicima web aplikacije informisanje vezano za opste informacije o pansionu,
+2. Omoguci korisnicima web aplikacije uvid u smestajne kapacitete pansiona,
+3. Omoguci registrovanim korisnicima online rezervaciju smestajnog prostora za njihove ljubimce,
+4. Vlasniku pansiona olaksa upravljanje resursima pansiona
+5. ...
+
 ## Opravdanost projekta
 
 Organizacija 4WIN-TEAM je prepoznala poslovnu priliku u domenu hotela za ljubimce,
