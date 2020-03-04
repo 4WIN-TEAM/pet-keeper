@@ -49,7 +49,7 @@ Projekat podrazumeva izradu web aplikacije koja će sadržati 5 modula(top-level
 
 ## Vremenska projekcija --potrebno razraditi
 
-Sastanak sa klijentom (šta definišemo sa klijentom na prvom sastanku??) --potrebno razraditi
+Sastanak sa klijentom (šta definišemo sa klijentom na prvom sastanku??) --potrebno razraditi  
 Plan i inicijalni koncept aplikacije biće gotov do 07.03.2020. godine.
 Izrada MOCKUP web prezentacije biće gotov do 15.03.2020. godine.
 ......
