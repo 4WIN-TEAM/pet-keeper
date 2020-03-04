@@ -14,23 +14,24 @@ Tim sačinjavaju 4 člana:
 
 ## Cilj projekta
 
-Cilj projekta je izrada web aplikacije koja će posetiocima sajta pružiti:
+Cilj projekta je izrada web aplikacije koja će:
 
-1. Omoguci korisnicima web aplikacije informisanje vezano za opste informacije o pansionu,
-2. Omoguci korisnicima web aplikacije uvid u smestajne kapacitete pansiona,
-3. Omoguci registrovanim korisnicima online rezervaciju smestajnog prostora za njihove ljubimce,
-4. Vlasniku pansiona olaksa upravljanje resursima pansiona
+1. Posetiocima sajta pružiti opšte informacije o pansionu
+2. Pružiti posetiocima uvid u smeštajne kapacitete pansiona,
+3. Pružiti posetiocima mogućnost besplatne registracije na sajtu,
+4. Omogućiti registrovanim korisnicima online rezervaciju smeštajnog prostora za njihove ljubimce,
+5. Vlasniku pansiona olakšati upravljanje resursima pansiona
 5. ...
 
 ## Opravdanost projekta
 
-Organizacija 4WIN-TEAM je prepoznala poslovnu priliku u domenu hotela za ljubimce,
+Organizacija 4WIN-TEAM je prepoznala poslovnu priliku u domenu hotelijerstva za ljubimce,
 u vidu nedostajućeg ONLINE rezervisanja prostora kod svih vlasnika ovakvih hotela u
 celokupnom .RS domenu.
 
 ## Okviri projekta
 
-Projekat podrazumeva izradu web aplikacije koja će sadržati 4 modula:
+Projekat podrazumeva izradu web aplikacije koja će sadržati 5 modula(top-level-design.jpg):
 
 1. Modul za prezentaciju hotela za ljubimce,
 2. Modul za registraciju korisnika
@@ -38,9 +39,28 @@ Projekat podrazumeva izradu web aplikacije koja će sadržati 4 modula:
 4. Modul za administraciju prostora
 5. Modul za administraciju aplikacije (backend)
 
-### Vremenska projekcija
+## Organizacija tima
+1. Odrediti uloge i zaduženja --potrebno razraditi
 
+## Rizici i mogući problemi
+
+1. Klijent želi da aplikacija bude integrisana sa već postojećim sajtom
+2. Integracija podataka iz postojeće baze klijenta
+
+## Vremenska projekcija --potrebno razraditi
+
+Sastanak sa klijentom (šta definišemo sa klijentom na prvom sastanku??) --potrebno razraditi
 Plan i inicijalni koncept aplikacije biće gotov do 07.03.2020. godine.
 Izrada MOCKUP web prezentacije biće gotov do 15.03.2020. godine.
- .....
- .....
+......
+Pitanje: da li treba da ovde budemo specifičniji sa taskovima i datumima?? --potrebno razraditi
+
+## Testiranje aplikacije
+
+Jelena i Spax neka daju smernice kako da testiramo aplikaciju(načini, alati itd....) --potrebno razraditi
+
+## Isporuka proizvoda
+
+Aplikacija može biti isporučena kao softverski paket koji će biti instaliran
+na klijentskom hardveru. Takođe, ako klijent pristane, aplikacija može biti isporučena
+na preinstaliranom hardveru(appliance).
