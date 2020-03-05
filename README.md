@@ -57,7 +57,12 @@ Pitanje: da li treba da ovde budemo specifičniji sa taskovima i datumima?? --po
 
 ## Testiranje aplikacije
 
-Jelena i Spax neka daju smernice kako da testiramo aplikaciju(načini, alati itd....) --potrebno razraditi
+Testiranje alikacije vršiće se na dva načina:
+ 1. Testiranjem aplikacije kroz Unit Test
+ 	- Pisanjem Unit Test-a proveravaće se ispravnost koda sa backend strane.
+ 	  Unit Test treba da sadrži proveru rada nam bazom podataka. (Provera CRUD-a)
+ 2. Ručno testiranje aplikacije
+ 	- Tester/korisnik će ručno prolaziti svaku postojeću funkciju u cilju pronalaska mogućih nedostataka u kodu.
 
 ## Isporuka proizvoda
 
