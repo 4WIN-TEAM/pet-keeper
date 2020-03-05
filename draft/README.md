@@ -1,7 +1,9 @@
 ## Zadatak:
 
 Korišćenjem radnih okvira ASP.NET Core, Entity Framework, Bootstrap, JQuery biblioteke realizovati Web Aplikaciju za prestavljanje Pet-keeper.
-Web aplikacija treba da sadrži:
+
+-Web aplikacija treba da sadrži:
+
 	1. Posetiocima sajta pružiti opšte informacije o pansionu
 	2. Pružiti posetiocima uvid u smeštajne kapacitete pansiona
 	3. Pružiti posetiocima mogućnost besplatne registracije na sajtu
