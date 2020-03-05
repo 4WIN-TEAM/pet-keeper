@@ -42,5 +42,5 @@ Dolazimo do sledeceg problema:
 Možda bi bilo najpametnije, odnosno najjednostavnije odraditi da se može rezervisati samo za sutra.
 I na taj način izbeći koplikovanje pisanje koda. Bukvalno jedno drugo vuče i kreće sa komplikovanjem.
 
-`Provera bi mogla da se vrši na nacin da se izvuče iz baze broj pasa koji imaju rezervisan smestaj za datum xx.xx.xxxx
+> Provera bi mogla da se vrši na nacin da se izvuče iz baze broj pasa koji imaju rezervisan smestaj za datum xx.xx.xxxx
 
