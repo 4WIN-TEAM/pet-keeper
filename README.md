@@ -47,11 +47,11 @@ Projekat podrazumeva izradu web aplikacije koja će sadržati 5 modula(top-level
 ## Vremenska projekcija --potrebno razraditi
 
 Sastanak sa klijentom (definisani aspekti aplikacije i vremenski okviri)  
-07.03. - Plan i inicijalni koncept aplikacije
-07.03. - 20.03. - Izrada MOCKUP web prezentacije (kontinuirano dogovaranje sa klijentom do postizanja saglasnosti oko izgleda web sajta)
-10.03. - 15.03. - Kostur aplikacije
-15.03. - 22.03. - Prva verzija aplikacije
-22.03. - Prezentacija prve verzije aplikacije
+07.03. - Plan i inicijalni koncept aplikacije  
+07.03. - 20.03. - Izrada MOCKUP web prezentacije (kontinuirano dogovaranje sa klijentom do postizanja saglasnosti oko izgleda web sajta)  
+10.03. - 15.03. - Kostur aplikacije  
+15.03. - 22.03. - Prva verzija aplikacije  
+22.03. - Prezentacija prve verzije aplikacije  
 ......
 Pitanje: da li treba da ovde budemo specifičniji sa taskovima i datumima?? --potrebno razraditi
 
