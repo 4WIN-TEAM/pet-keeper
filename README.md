@@ -21,7 +21,7 @@ Cilj projekta je izrada web aplikacije koja će:
 3. Pružiti posetiocima mogućnost besplatne registracije na sajtu,
 4. Omogućiti registrovanim korisnicima online rezervaciju smeštajnog prostora za njihove ljubimce,
 5. Vlasniku pansiona olakšati upravljanje resursima pansiona
-5. ...
+6. ...
 
 ## Opravdanost projekta
 
@@ -58,11 +58,15 @@ Pitanje: da li treba da ovde budemo specifičniji sa taskovima i datumima?? --po
 ## Testiranje aplikacije
 
 Testiranje alikacije vršiće se na dva načina:
+
  1. Testiranjem aplikacije kroz Unit Test
- 	- Pisanjem Unit Test-a proveravaće se ispravnost koda sa backend strane.
- 	  Unit Test treba da sadrži proveru rada nam bazom podataka. (Provera CRUD-a)
- 2. Ručno testiranje aplikacije
- 	- Tester/korisnik će ručno prolaziti svaku postojeću funkciju u cilju pronalaska mogućih nedostataka u kodu.
+
+- Pisanjem Unit Test-a proveravaće se ispravnost koda sa backend strane.
+  Unit Test treba da sadrži proveru rada nam bazom podataka. (Provera CRUD-a)
+
+ 1. Ručno testiranje aplikacije
+
+- Tester/korisnik će ručno prolaziti svaku postojeću funkciju u cilju pronalaska mogućih nedostataka u kodu.
 
 ## Isporuka proizvoda
 
