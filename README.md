@@ -7,10 +7,10 @@ rezervisanje prostora u hotelu za ljubimce.
 
 Tim sačinjavaju 4 člana:
 
-1. JeLeNa1996 (Jelena)
-2. MIT16-19 (Marko)
-3. SpaxMK (Spasoja)
-4. dragoslavbabic (Dragoslav)
+1. JeLeNa1996 (Jelena) - kodiranje, dizajn
+2. MIT16-19 (Marko) - testiranje, dizajn
+3. SpaxMK (Spasoja) - kodiranje, test kod
+4. dragoslavbabic (Dragoslav) - organizacija, testiranje
 
 ## Cilj projekta
 
@@ -39,9 +39,6 @@ Projekat podrazumeva izradu web aplikacije koja će sadržati 5 modula(top-level
 4. Modul za administraciju prostora
 5. Modul za administraciju aplikacije (backend)
 
-## Organizacija tima
-1. Odrediti uloge i zaduženja --potrebno razraditi
-
 ## Rizici i mogući problemi
 
 1. Klijent želi da aplikacija bude integrisana sa već postojećim sajtom
@@ -49,9 +46,12 @@ Projekat podrazumeva izradu web aplikacije koja će sadržati 5 modula(top-level
 
 ## Vremenska projekcija --potrebno razraditi
 
-Sastanak sa klijentom (šta definišemo sa klijentom na prvom sastanku??) --potrebno razraditi  
-Plan i inicijalni koncept aplikacije biće gotov do 07.03.2020. godine.
-Izrada MOCKUP web prezentacije biće gotov do 15.03.2020. godine.
+Sastanak sa klijentom (definisani aspekti aplikacije i vremenski okviri)  
+07.03. - Plan i inicijalni koncept aplikacije
+07.03. - 20.03. - Izrada MOCKUP web prezentacije (kontinuirano dogovaranje sa klijentom do postizanja saglasnosti oko izgleda web sajta)
+10.03. - 15.03. - Kostur aplikacije
+15.03. - 22.03. - Prva verzija aplikacije
+22.03. - Prezentacija prve verzije aplikacije
 ......
 Pitanje: da li treba da ovde budemo specifičniji sa taskovima i datumima?? --potrebno razraditi
 
