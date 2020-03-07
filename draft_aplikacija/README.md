@@ -1,6 +1,6 @@
 ## Zadatak:
 
-Korišćenjem radnih okvira ASP.NET Core, Entity Framework, Bootstrap, JQuery biblioteke realizovati Web Aplikaciju za prestavljanje Pet-keeper.
+Korišćenjem radnih okvira ASP.NET Core, Entity Framework, Bootstrap, Ajax, JQuery biblioteke realizovati Web Aplikaciju za prestavljanje Pet-keeper.
 
 - Web aplikacija treba da sadrži:
 
