@@ -15,7 +15,7 @@ Korišćenjem radnih okvira ASP.NET Core, Entity Framework, Bootstrap, Ajax, JQu
 Pet:
 - Id - Identifikator
 - Ime - obavezna tekstualna vrednost sa najviše 50 karaktera
-- Vrsta - obavezna tekstualna vrednost birana kroz padajući meni (Enum)
+- Rasa - obavezna tekstualna vrednost sa najviše 50 karaktera
 - Pol - obavezna tekstualna vrednost birana kroz padajući meni (Enum)
 - Starost - obavezna celobrojna vrednost iz intervala (0, 100]
 - Stelirisan - obavezno polje (DA/NE)
