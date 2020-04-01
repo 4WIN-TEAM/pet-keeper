@@ -52,10 +52,10 @@ Sastanak sa klijentom (definisani aspekti aplikacije i vremenski okviri)
 07.03. - 20.03. - Izrada MOCKUP web prezentacije (kontinuirano dogovaranje sa klijentom do postizanja saglasnosti oko izgleda web sajta)  
 10.03. - 15.03. - Kostur aplikacije  
 15.03. - 22.03. - Prva verzija aplikacije
-23.03. - 31.03. - Diskusija u okviru tima o dosadašnjem radu, uočavanje nedostataka i predstavljanje novih ideja
-01.04. - Izrada koncepta za prezentaciju i diskusija u okviru tima
+23.03. - 31.03. - Diskusija u okviru tima o dosadašnjem radu, uočavanje nedostataka i predstavljanje novih ideja  
+01.04. - Izrada koncepta za prezentaciju i diskusija u okviru tima  
 02.04. - Prezentacija koncepta   
-03.04. - 06.04. - Adaptacija projekta na osnovu iznetih sugestija i ideja prilikom prezentacije koncepta  
+03.04. - 06.04. - Adaptacija projekta na osnovu iznetih sugestija i ideja prilikom prezentacije koncepta   
 07.04 - 
 
 
