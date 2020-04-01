@@ -7,10 +7,10 @@ rezervisanje prostora u hotelu za ljubimce.
 
 Tim sačinjavaju 4 člana:
 
-1. JeLeNa1996 (Jelena) - kodiranje, dizajn
-2. MIT16-19 (Marko) - testiranje, dizajn
-3. SpaxMK (Spasoja) - kodiranje, test kod
-4. dragoslavbabic (Dragoslav) - organizacija, testiranje
+1. Jelena Kaurin MIT24/19 (JeLeNa1996) - kodiranje, dizajn
+2. Marko Kozomora MIT16/19 (MIT16-19) - testiranje, dizajn
+3. Spasoja Stojšić MIT25-19 (SpaxMK) - kodiranje, test kod
+4. Dragoslav Babić MIT21-19 (dragoslavbabic) - organizacija, testiranje
 
 ## Cilj projekta
 
@@ -21,13 +21,13 @@ Cilj projekta je izrada web aplikacije koja će:
 3. Pružiti posetiocima mogućnost besplatne registracije na sajtu,
 4. Omogućiti registrovanim korisnicima online rezervaciju smeštajnog prostora za njihove ljubimce,
 5. Vlasniku pansiona olakšati upravljanje resursima pansiona
-6. ...
 
 ## Opravdanost projekta
 
 Organizacija 4WIN-TEAM je prepoznala poslovnu priliku u domenu hotelijerstva za ljubimce,
 u vidu nedostajućeg ONLINE rezervisanja prostora kod svih vlasnika ovakvih hotela u
-celokupnom .RS domenu.
+celokupnom .RS domenu. Takav način rezervacije omogućuje vlasnicima da njihovi resursi budu
+dostupni i za turiste koji su na proputovanju kroz našu zemlju. 
 
 ## Okviri projekta
 
@@ -43,30 +43,21 @@ Projekat podrazumeva izradu web aplikacije koja će sadržati 5 modula(top-level
 
 1. Klijent želi da aplikacija bude integrisana sa već postojećim sajtom
 2. Integracija podataka iz postojeće baze klijenta
+3. ONLINE plaćanje može predstavljati pravno-birokratski problem (potrebno konsultovati pravnog savetnika )
 
-## Vremenska projekcija --potrebno razraditi
+## Vremenska projekcija
 
 Sastanak sa klijentom (definisani aspekti aplikacije i vremenski okviri)  
 07.03. - Plan i inicijalni koncept aplikacije  
 07.03. - 20.03. - Izrada MOCKUP web prezentacije (kontinuirano dogovaranje sa klijentom do postizanja saglasnosti oko izgleda web sajta)  
 10.03. - 15.03. - Kostur aplikacije  
-15.03. - 22.03. - Prva verzija aplikacije  
-22.03. - Prezentacija prve verzije aplikacije  
-......
-Pitanje: da li treba da ovde budemo specifičniji sa taskovima i datumima?? --potrebno razraditi
+15.03. - 22.03. - Prva verzija aplikacije
+23.03. - 31.03. - Diskusija u okviru tima o dosadašnjem radu, uočavanje nedostataka i predstavljanje novih ideja
+01.04. - Izrada koncepta za prezentaciju i diskusija u okviru tima
+02.04. - Prezentacija koncepta   
+03.04. - 06.04. - Adaptacija projekta na osnovu iznetih sugestija i ideja prilikom prezentacije koncepta  
+07.04 - 
 
-## Testiranje aplikacije
-
-Testiranje alikacije vršiće se na dva načina:
-
-1. Testiranjem aplikacije kroz Unit Test
-
-   * Pisanjem Unit Test-a proveravaće se ispravnost koda sa backend strane.
-  Unit Test treba da sadrži proveru rada nam bazom podataka. (Provera CRUD-a)
-
-2. Ručno testiranje aplikacije
-
-   * Tester/korisnik će ručno prolaziti svaku postojeću funkciju u cilju pronalaska mogućih nedostataka u kodu.
 
 ## Isporuka proizvoda
 
