@@ -3,6 +3,16 @@
 Projekat iz predmeta  "Softversko inženjerstvo" u okviru kog ce biti izradjena aplikacija za online
 rezervisanje prostora u hotelu za ljubimce.
 
+## Organizacija repozitorijuma
+
+1. '/app' - Aplikacija
+2. '/app/src' - Izvorni kod aplikacije
+3. '/Dokumentacija'
+4. '/Dokumentacija/Aplikacija' - Dokumentovanje aplikacije
+5. '/Dokumentacija/koncept' - Fajlovi inicijalnog koncepta
+6. '/Dokumentacija/mockup web sajta' - Predlog dizajna FRONTEND aplikacije
+
+
 ## Tim
 
 Tim sačinjavaju 4 člana:

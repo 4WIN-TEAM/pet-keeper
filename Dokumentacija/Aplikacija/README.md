@@ -16,8 +16,8 @@ Korišćenjem radnih okvira ASP.NET Core, Entity Framework, Bootstrap, Ajax i JQ
 
 #### BACKEND
 
-1. Baza podataka
-2. ASP.NET Core
+1. Baza podataka  - MSSQL
+2. Aplikativni moduli pisani na 'ASP.NET Core' platformi.
 
 ## Aplikacija treba da obezbedi rad sa sledećim entitetima:
 
