@@ -1,0 +1,261 @@
+﻿@model IEnumerable<PetKeeper.Models.PodaciViewModel>
+
+@{ 
+    var podaciViewModel = new PodaciViewModel() { };
+}
+<partial name="_CreatePartial" for="@podaciViewModel">
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" style="margin: 6px">
+        &nbsp;Kreiraj
+    </button>
+    <div id="openModal">
+
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Starost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DatumPrijema)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rasa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pol)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sterilisan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vakcinisan)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.User)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Starost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DatumPrijema)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rasa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pol)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sterilisan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vakcinisan)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.User)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)">Edit</button> |
+                        <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)">Details</button> |
+                        <button type="button" class="btn btn-danger btn-sm" onclick="getdeleted(@item.Id)"> Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+   
+    @*<button type="button" class="btn btn-success" onclick="getEdit()">Edit</button> |
+    <button type="button" class="btn btn-primary" onclick="getDetails()">Details</button> |
+    <button type="button" class="btn btn-danger" onclick="deleted()"> Delete</button>*@
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+        <script type="text/javascript">
+
+            $('#submitButton').click(function (e) {
+
+                var validated = true;
+
+                var ime = $('#ime').val();
+                var starost = $('#starost').val();
+                var datumPrijema = $('#datumPrijema').val();
+                var rasa = $('#rasa').find(":selected").val();
+                var pol = $('#pol').find(":selected").val();
+                var sterilisan = $('#sterilisan').find(":selected").val();
+                var vakcinisan = $('#vakcinisan').find(":selected").val();
+
+
+                var valid = $('#myModalForm').valid();
+
+                if (!valid) {
+                    validated = false;
+                }
+                else {
+                    e.preventDefault();
+                }
+                //$.validator.unobtrusive.parse($('#myModalForm'));
+                if (validated) {
+                    var dataToPassToController = {
+                        Ime: ime,
+                        Starost: starost,
+                        DatumPrijema: datumPrijema,
+                        Rasa: rasa,
+                        Pol: pol,
+                        Sterilisan: sterilisan,
+                        Vakcinisan: vakcinisan
+
+                    }
+                    $.ajax({
+                        dataType: "json",
+                        data: dataToPassToController,
+                        type: "POST",
+                        url: "/Reservation/Create",
+                        success: function (result) {
+                            if (result) {
+                                $('#myModal').modal('hide');
+                                $('#myModal').on('hidden.bs.modal', function () {
+                                    bootbox.alert("Reservation created successfully", function () {
+                                        location.reload();
+                                    });
+                                })
+                            }
+                            else {
+                                bootbox.alert("None");
+                            }
+                        },
+                        error: function (request, status, error) {
+                            switch (request.status) {
+                                case 401:
+                                    bootbox.alert("You don't have permission to access this resource ! (401 UNAUTHORIZED)");
+                                    //window.location.href = '/Home/Error401';
+                                    break;
+                                case 403:
+                                    bootbox.alert("You don't have permission to access this resource ! (403 FORBIDDEN)");
+                                    //window.location.href = '/Home/Error403';
+                                    break;
+                                default:
+                                    window.location.href = '/Home/Error';
+                                    break;
+                            }
+                        }
+
+                    });
+                }
+            });
+            function getEdit(id) {
+
+                $.ajax({
+                    dataType: "html",
+                    type: "GET",
+                    url: "/Reservation/Edit/" + id,
+                    success: function (result) {
+                        $('#openModal').html(result);
+
+                        $('#myEditModal').modal('show');
+
+                        $.validator.unobtrusive.parse($('#editModal'));
+
+                        $('#submitButtonEdit').on('click', function (e) {
+
+                            var validated = true;
+
+                            var id = $('#editId').val();
+                            var ime = $('#editIme').val();
+                            var starost = $('#editStarost').val();
+                            var datumPrijema = $('#editDatumPrijema').val();
+                            var rasa = $('#editRasa').find(":selected").val();
+                            var pol = $('#editPol').find(":selected").val();
+                            var sterilisan = $('#editSterilisan').find(":selected").val();
+                            var vakcinisan = $('#editVakcinisan').find(":selected").val();
+                            var status = $('#editStatus').find(":selected").val();
+                            var user = $('#editUser').val();
+
+
+
+                            var valid = $('#editModal').valid();
+
+                            if (!valid) {
+                                validated = false;
+
+                            }
+                            else {
+                                e.preventDefault();
+                            }
+                            if (validated) {
+                                var editData = {
+                                    Id: id,
+                                    Ime: ime,
+                                    Starost: starost,
+                                    DatumPrijema: datumPrijema,
+                                    Rasa: rasa,
+                                    Pol: pol,
+                                    Sterilisan: sterilisan,
+                                    Vakcinisan: vakcinisan,
+                                    Status: status,
+                                    User: user
+
+                                };
+                            }
+                            $.ajax({
+                                dataType: "json",
+                                data: editData,
+                                type: "POST",
+                                url: "/Reservation/Edit",
+                                success: function (result) {
+                                    if (result) {
+                                        $('#myEditModal').modal('hide');
+                                        $('#myEditModal').on('hidden.bs.modal', function () {
+                                            bootbox.alert("Reservation edited successfully", function () {
+                                                location.reload();
+                                            });
+                                        })
+                                    }
+                                    else {
+                                        bootbox.alert("None");
+                                    }
+                                }
+                            });
+                        });
+                    },
+                    error: function (request, status, error) {
+                        switch (request.status) {
+                            case 401:
+                                bootbox.alert("You don't have permission to access this resource ! (401 UNAUTHORIZED)");
+                                //window.location.href = '/Home/Error401';
+                                break;
+                            case 403:
+                                bootbox.alert("You don't have permission to access this resource ! (403 FORBIDDEN)");
+                                //window.location.href = '/Home/Error403';
+                                break;
+                            default:
+                                window.location.href = '/Home/Error';
+                                break;
+                        }
+                    }
+                });
+            }
+        </script>
+    }
