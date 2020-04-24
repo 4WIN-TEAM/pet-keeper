@@ -13,5 +13,7 @@ namespace PetKeeper.Services
         IResult<NoValue> AddData(PodaciViewModel model, string currentUserId);
         IResult<PodaciViewModel> GetEdit(long id, string currentUserId);
         IResult<PodaciViewModel> Update(PodaciViewModel model, string currentUserId);
+        IResult<PodaciViewModel> GetDetails(long id, string currentUserId);
+        IResult<NoValue> Delete(long id, string currentUserId);
     }
 }

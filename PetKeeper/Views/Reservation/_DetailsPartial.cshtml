@@ -1,0 +1,63 @@
+﻿@model PetKeeper.Models.PodaciViewModel
+
+<div class="modal fade" id="myDetailsModal" role="dialog" data-backdrop="static">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" data-placement="left" title="Close" data-original-title="Tooltip on left">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <input asp-for="Id " type="text" id="detailsId" hidden />
+
+                <input asp-for="User" type="text" class="form-control" id="detailsUserId" hidden>
+
+                <div class="form-group">
+                    <label asp-for="Ime" class="control-label"></label>
+                    <input asp-for="Ime" class="form-control" id="detailsIme" disabled/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Starost" class="control-label"></label>
+                    <input asp-for="Starost" class="form-control" id="detailsStarost" disabled/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DatumPrijema" class="control-label"></label>
+                    <input asp-for="DatumPrijema" class="form-control" id="detailsDatumPrijema" disabled/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Rasa" class="control-label"></label>
+                    <input asp-for="Rasa" class="form-control" id="detailsRasa" disabled/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Pol" class="control-label"></label>
+                    <input asp-for="Pol" class="form-control" id="detailsPol" disabled/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Sterilisan"></label>
+                    <input asp-for="Sterilisan" class="form-control" id="detailsSterilisan" disabled/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Vakcinisan" ></label>
+                    <input asp-for="Vakcinisan" class="form-control" id="detailsVakcinisan" disabled/>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Status" class="control-label"></label>
+                    <input asp-for="Status" class="form-control" id="detailsStatus" disabled/>
+                </div>
+
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -141,7 +141,54 @@ namespace PetKeeper.Services
 
             return result;
         }
+        public IResult<PodaciViewModel> GetDetails(long id, string currentUserId)
+        {
+            var result = new Result<PodaciViewModel>();
+            var podaci = _entity.Podaci.Find(id);
 
+            try
+            {
+                result.Value = _entity.Podaci.Where(m => m.Id == id).Select(m => new PodaciViewModel
+                {
+                    Id = m.Id,
+                    Ime = m.Ime,
+                    Starost = m.Starost,
+                    DatumPrijema = m.DatumPrijema,
+                    Rasa = (RasaEnums)m.RasaId,
+                    Pol = (PolEnums)m.PolId,
+                    Sterilisan = (SterilisanEnums)m.SterilisanId,
+                    Vakcinisan = (VakcinisanEnums)m.VakcinisanId,
+                    User = m.UserId,
+                    Status = (StatusEnums)m.StatusId
+                }).Single();
+                result.Succedded = true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.GetBaseException().Message);
+                result.Succedded = false;
+            }
+            return result;
+        }
+        public IResult<NoValue> Delete(long id, string currentUserId)
+        {
+            var result = new Result<NoValue>();
+            var podaci = _entity.Podaci.Find(id);
+
+            try
+            {
+                _entity.Podaci.Remove(podaci);
+                _entity.SaveChanges();
+                result.Succedded = true;
+                 
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.GetBaseException().Message);
+                result.Succedded = false;
+            }
+            return result;
+        }
 
 
 
