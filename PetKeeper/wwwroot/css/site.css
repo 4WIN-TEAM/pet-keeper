@@ -93,8 +93,9 @@ src: url("../fonts/Bitter-Bold.otf")
   border-radius: 15px;
   text-align: center;
   width: 50%;
-  margin: 20px;
-  margin-top: 5%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
   font-family: "Bitter";
   font-style: italic;
   background-color: #CB8AFF;
@@ -118,6 +119,104 @@ src: url("../fonts/Bitter-Bold.otf")
   margin: 10px;
 }
 
+.section2{
+  padding: 52px 0 16px;
+  background-color: #593196;
+}
+
+.list1 {
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.list1, .collist1 {
+  display: flex;
+}
+
+.list1 li {
+  overflow: hidden;
+  position: relative;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1200px){
+.col-lg-3 {
+    width: 25%;
+  }
+}
+
+.pad {
+  padding: 0 !important;
+}
+
+.thumbnail {
+  line-height: 0 !important;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+}
+
+.list1 li figure {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.img-thumbnail1 {
+  padding: 5px;
+  border: 1px solid #7b7b7b;
+  border-radius: 0;
+  background: transparent;
+}
+
+.small-img{
+  width: 100px;
+  height: 230px;
+}
+
+.list1 li figure img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.list1 li .caption_list1 {
+  padding: 5px 0;
+}
+
+.list1_title1 {
+  text-align: left;
+  position: relative;
+  display: block;
+  font-family: "Bitter";
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 800;
+  color: #FFF !important;
+  padding: 0;
+  margin: 0 0 1px !important;
+}
+
+p {
+  font-family: "Bitter";
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #9b9c9d;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 14px;
+}
 
 
 
