@@ -12958,11 +12958,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\faks\\master1\\softversko inz\\Andrijevic\\Projekat SI\\test\\PetKeeper\\PetKeeper\\PetKeeper.csproj",
+      "projectUniqueName": "E:\\faks\\master1\\softversko\\Andrijevic\\Projekat\\Glavni\\PetKeeper\\PetKeeper\\PetKeeper.csproj",
       "projectName": "PetKeeper",
-      "projectPath": "E:\\faks\\master1\\softversko inz\\Andrijevic\\Projekat SI\\test\\PetKeeper\\PetKeeper\\PetKeeper.csproj",
+      "projectPath": "E:\\faks\\master1\\softversko\\Andrijevic\\Projekat\\Glavni\\PetKeeper\\PetKeeper\\PetKeeper.csproj",
       "packagesPath": "C:\\Users\\Jelena\\.nuget\\packages\\",
-      "outputPath": "E:\\faks\\master1\\softversko inz\\Andrijevic\\Projekat SI\\test\\PetKeeper\\PetKeeper\\obj\\",
+      "outputPath": "E:\\faks\\master1\\softversko\\Andrijevic\\Projekat\\Glavni\\PetKeeper\\PetKeeper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

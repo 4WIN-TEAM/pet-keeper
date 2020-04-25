@@ -41,11 +41,26 @@ namespace PetKeeper.Controllers
             }
             
         }
-        
-            // GET: Reservation/Details/5
-            public ActionResult Details(int id)
+
+        public async Task<ActionResult> Details(long id)
         {
-            return View();
+            var currentUser = await _userManager.GetUserAsync(User);
+            var currentUserId = currentUser.Id;
+
+            var result = _database.GetDetails(id, currentUserId);
+
+            if (ModelState.IsValid)
+            {
+                if (result.Succedded)
+                {
+                    return PartialView("_DetailsPartial", result.Value);
+                }
+                else
+                {
+                    return Unauthorized();
+                }
+            }
+            return View(result);
         }
 
         // GET: Reservation/Create
@@ -126,25 +141,22 @@ namespace PetKeeper.Controllers
             return View(model);
         }
 
-        // GET: Reservation/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Reservation/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, IFormCollection collection)
+        //[ValidateAntiForgeryToken]
+        public async Task<ActionResult> Delete(long id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            var currentUser = await _userManager.GetUserAsync(User);
+            var currentUserId = currentUser.Id;
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
+            var result = _database.Delete(id, currentUserId);
+
+            if (result.Succedded)
             {
-                return View();
+                return Json(result.Succedded);
+            }
+            else
+            {
+                return Unauthorized();
             }
         }
     }
