@@ -59,3 +59,73 @@ body {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* Front page */
+@font-face{
+  font-family: "Bitter";
+src: url("../fonts/Bitter-Bold.otf")
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-brand{
+  margin-left: 10px;
+  font-family:"Bitter";
+  font-weight: bolder;
+  font-size: 1.6em;
+}
+
+.navbar-nav{
+  text-align: center;
+  justify-content: center;
+}
+
+.text-light {
+  font-family:"Bitter";
+}
+
+.naslov {
+  border: 5px solid #593196;
+  border-radius: 15px;
+  text-align: center;
+  width: 50%;
+  margin: 20px;
+  margin-top: 5%;
+  font-family: "Bitter";
+  font-style: italic;
+  background-color: #CB8AFF;
+  color: #593196;
+}
+
+.front-all{
+  margin-top: 2%;
+}
+
+.front-levo{
+  font-family: "Bitter";
+  font-style: italic;
+  font-size: 3em;
+  color: rgb(77, 59, 143);
+  /*background-color:#CB8AFF;*/
+}
+
+.front-centar{
+  justify-content: end;
+  margin: 10px;
+}
+
+
+
+
+.btn-sm{
+  border-radius: 3px;
+  width: 100px;
+}
+
+.btn-danger{
+  background-color: blueviolet;
+}
