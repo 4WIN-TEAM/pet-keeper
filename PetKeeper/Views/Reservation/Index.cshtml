@@ -77,9 +77,9 @@
                         @Html.DisplayFor(modelItem => item.Status)
                     </td>
                     <td>
-                        <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)">Edit</button> 
-                        <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)">Details</button> 
-                        <button type="button" class="btn btn-danger btn-sm" onclick="getDeleted(@item.Id)"> Delete</button>
+                        <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)">Izmeni</button> 
+                        <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)">Detalji</button> 
+                        <button type="button" class="btn btn-danger btn-sm" onclick="getDeleted(@item.Id)"> Obriši</button>
                     </td>
                 </tr>
             }
@@ -137,7 +137,7 @@
                             if (result) {
                                 $('#myModal').modal('hide');
                                 $('#myModal').on('hidden.bs.modal', function () {
-                                    bootbox.alert("Reservation created successfully", function () {
+                                    bootbox.alert("Reservacija je uspešno kreirana!", function () {
                                         location.reload();
                                     });
                                 })
@@ -228,7 +228,7 @@
                                     if (result) {
                                         $('#myEditModal').modal('hide');
                                         $('#myEditModal').on('hidden.bs.modal', function () {
-                                            bootbox.alert("Reservation edited successfully", function () {
+                                            bootbox.alert("Reservacija je uspešno izmenjena!", function () {
                                                 location.reload();
                                             });
                                         })
@@ -292,14 +292,14 @@
         function getDeleted(id) {
 
             bootbox.confirm({
-                message: "Do you want to delete this?",
+                message: "Da li želite da izbrišete vašu rezervaciju?",
                 buttons: {
                     confirm: {
-                        label: 'Yes',
+                        label: 'Da',
                         className: 'btn-success'
                     },
                     cancel: {
-                        label: 'No',
+                        label: 'Ne',
                         className: 'btn-danger'
                     }
                 },
@@ -311,7 +311,7 @@
                             url: "/Reservation/Delete/" + id,
                             success: function (result) {
                                 if (result) {
-                                    bootbox.alert("Reservation deleted successfully", function () {
+                                    bootbox.alert("Reservacija je uspešno obrisana!", function () {
                                         location.reload();
                                     });
                                 }
