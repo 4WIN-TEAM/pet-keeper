@@ -1,0 +1,24 @@
+﻿@model PetKeeper.Models.RoleViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalji</h1>
+
+<div>
+    <dl class="row">
+
+        <dt class="col-sm-2">
+            Ime role:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RoleName)
+        </dd>
+    </dl>
+
+</div>
+<div>
+    
+    <a asp-action="Edit" asp-route-id="@Model.RoleId">Izmeni</a> |
+    <a asp-action="Roles">Nazad na listu</a>
+</div>

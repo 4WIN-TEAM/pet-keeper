@@ -217,14 +217,11 @@ p {
   padding: 0;
   margin-bottom: 14px;
 }
-
-
-
-.btn-sm{
-  border-radius: 3px;
-  width: 100px;
+.btn-sm {
+    border-radius: 3px;
+    width: 100px;
 }
 
-.btn-danger{
-  background-color: blueviolet;
+.btn-danger {
+    background-color: #ff3333;
 }

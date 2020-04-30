@@ -48,47 +48,131 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Ime)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Starost)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DatumPrijema)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Rasa)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Pol)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Sterilisan)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Vakcinisan)
-                    </td>
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.User)
-                    </td>*@
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)">Izmeni</button> 
-                        <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)">Detalji</button> 
-                        <button type="button" class="btn btn-danger btn-sm" onclick="getDeleted(@item.Id)"> Obriši</button>
-                    </td>
-                </tr>
+                @if (item.Status.ToString() == "Odbijeno")
+                {
+                    <tr class="table-active">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Starost)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DatumPrijema)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rasa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pol)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sterilisan)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vakcinisan)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)">Izmeni</button>
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)">Detalji</button>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="getDeleted(@item.Id)">Izbriši</button>
+                                }
+                                else
+                                {
+                                    @if (item.Status.ToString() == "Prihvaćeno")
+                                    {
+                                        <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)" disabled>Izmeni</button>
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)">Detalji</button>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="getDeleted(@item.Id)" disabled>Izbriši</button>
+                                    }
+                                    else if (item.Status.ToString() == "Odbijeno")
+                                    {
+                                        <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)" disabled>Izmeni</button>
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)" disabled>Detalji</button>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="getDeleted(@item.Id)" disabled>Izbriši</button>
+                                    }
+                                    else
+                                    {
+                                        <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)">Izmeni</button>
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)">Detalji</button>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="getDeleted(@item.Id)">Izbriši</button>
+                                    }
+                                }
+                            }
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Starost)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DatumPrijema)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rasa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pol)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sterilisan)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vakcinisan)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)">Izmeni</button>
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)">Detalji</button>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="getDeleted(@item.Id)">Izbriši</button>
+                                }
+                                else
+                                {
+                                    @if (item.Status.ToString() == "Prihvaćeno")
+                                    {
+                                        <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)" disabled>Izmeni</button>
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)">Detalji</button>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="getDeleted(@item.Id)" disabled>Izbriši</button>
+                                    }
+                                    else if (item.Status.ToString() == "Odbijeno")
+                                    {
+                                        <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)" disabled>Izmeni</button>
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)" disabled>Detalji</button>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="getDeleted(@item.Id)" disabled>Izbriši</button>
+                                    }
+                                    else
+                                    {
+                                        <button type="button" class="btn btn-success btn-sm" onclick="getEdit(@item.Id)">Izmeni</button>
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="getDetails(@item.Id)">Detalji</button>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="getDeleted(@item.Id)">Izbriši</button>
+                                    }
+                                }
+                            }
+                        </td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
-   
-    @*<button type="button" class="btn btn-success" onclick="getEdit()">Edit</button> |
-    <button type="button" class="btn btn-primary" onclick="getDetails()">Details</button> |
-    <button type="button" class="btn btn-danger" onclick="deleted()"> Delete</button>*@
 
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
@@ -150,11 +234,9 @@
                             switch (request.status) {
                                 case 401:
                                     bootbox.alert("You don't have permission to access this resource ! (401 UNAUTHORIZED)");
-                                    //window.location.href = '/Home/Error401';
                                     break;
                                 case 403:
                                     bootbox.alert("You don't have permission to access this resource ! (403 FORBIDDEN)");
-                                    //window.location.href = '/Home/Error403';
                                     break;
                                 default:
                                     window.location.href = '/Home/Error';
@@ -244,11 +326,9 @@
                         switch (request.status) {
                             case 401:
                                 bootbox.alert("You don't have permission to access this resource ! (401 UNAUTHORIZED)");
-                                //window.location.href = '/Home/Error401';
                                 break;
                             case 403:
                                 bootbox.alert("You don't have permission to access this resource ! (403 FORBIDDEN)");
-                                //window.location.href = '/Home/Error403';
                                 break;
                             default:
                                 window.location.href = '/Home/Error';
@@ -274,11 +354,9 @@
                     switch (request.status) {
                         case 401:
                             bootbox.alert("You don't have permission to access this resource ! (401 UNAUTHORIZED)");
-                            //window.location.href = '/Home/Error401';
                             break;
                         case 403:
                             bootbox.alert("You don't have permission to access this resource ! (403 FORBIDDEN)");
-                            //window.location.href = '/Home/Error403';
                             break;
                         default:
                             window.location.href = '/Home/Error';
@@ -292,14 +370,14 @@
         function getDeleted(id) {
 
             bootbox.confirm({
-                message: "Da li želite da izbrišete vašu rezervaciju?",
+                message: "Do you want to delete this?",
                 buttons: {
                     confirm: {
-                        label: 'Da',
+                        label: 'Yes',
                         className: 'btn-success'
                     },
                     cancel: {
-                        label: 'Ne',
+                        label: 'No',
                         className: 'btn-danger'
                     }
                 },
@@ -311,7 +389,7 @@
                             url: "/Reservation/Delete/" + id,
                             success: function (result) {
                                 if (result) {
-                                    bootbox.alert("Reservacija je uspešno obrisana!", function () {
+                                    bootbox.alert("Reservacija je uspešno izbrisana!", function () {
                                         location.reload();
                                     });
                                 }
@@ -320,11 +398,9 @@
                                 switch (request.status) {
                                     case 401:
                                         bootbox.alert("You don't have permission to access this resource ! (401 UNAUTHORIZED)");
-                                        //window.location.href = '/Home/Error401';
                                         break;
                                     case 403:
                                         bootbox.alert("You don't have permission to access this resource! (403 FORBIDDEN)");
-                                        //window.location.href = '/Home/Error403';
                                         break;
                                     default:
                                         window.location.href = '/Home/Error';

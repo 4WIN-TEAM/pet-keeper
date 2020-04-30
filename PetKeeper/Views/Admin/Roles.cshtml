@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PetKeeper.Models.RoleViewModel>
+
+
+@{
+    ViewData["Title"] = "Roles";
+}
+
+<h1>Role</h1>
+
+<p>
+    <a asp-action="Create">Kreiraj novu rolu</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id role
+            </th>
+            <th>
+               Ime role
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.RoleId)</td>
+                <td>@Html.DisplayFor(modelItem => item.RoleName)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RoleId">Izmeni</a> |
+                    <a asp-action="Details" asp-route-id="@item.RoleId">Detalji</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RoleId">Izbriši</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+
+    </script>
+}

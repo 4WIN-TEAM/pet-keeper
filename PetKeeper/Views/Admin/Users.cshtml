@@ -1,0 +1,49 @@
+﻿@using PetKeeper.Common
+@model IEnumerable<PetKeeper.Models.UserViewModel>
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>Korisnici</h1>
+
+@*<p>
+        <a asp-action="CreateU">Create New</a>
+    </p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Korisničko ime
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role)
+                </td>
+                <td>
+                    <a asp-action="AddRole" , asp-route-id="@item.Id">Dodaj/Promeni rolu</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -24,11 +24,39 @@ namespace PetKeeper.Services
             _entity = entity;
         }
 
-        public Result<List<PodaciViewModel>> GetData()
+        public Result<List<PodaciViewModel>> GetData(string currentUserId)
         {
             var result = new Result<List<PodaciViewModel>>();
 
             try {
+                result.Value = _entity.Podaci.Where(m => m.User.Id == currentUserId).Select(m => new PodaciViewModel
+                {
+                    Id = m.Id,
+                    Ime = m.Ime,
+                    Starost = m.Starost,
+                    DatumPrijema = m.DatumPrijema,
+                    Rasa = (RasaEnums)m.RasaId,
+                    Pol = (PolEnums)m.PolId,
+                    Sterilisan = (SterilisanEnums)m.SterilisanId,
+                    Vakcinisan = (VakcinisanEnums)m.VakcinisanId,
+                    User = m.UserId,
+                    Status = (StatusEnums)m.StatusId
+                }).ToList();
+                result.Succedded = true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.GetBaseException().Message);
+                result.Succedded = false;
+            }
+            return result;
+        }
+        public Result<List<PodaciViewModel>> GetAllData(string currentUserId)
+        {
+            var result = new Result<List<PodaciViewModel>>();
+
+            try
+            {
                 result.Value = _entity.Podaci.Select(m => new PodaciViewModel
                 {
                     Id = m.Id,
@@ -51,6 +79,7 @@ namespace PetKeeper.Services
             }
             return result;
         }
+
         public IResult<NoValue> AddData(PodaciViewModel model, string currentUserId)
         {
             var result = new Result<NoValue>();
@@ -113,25 +142,47 @@ namespace PetKeeper.Services
 
         }
 
-        public IResult<PodaciViewModel> Update(PodaciViewModel model, string currentUserId)
+        public IResult<PodaciViewModel> Update(PodaciViewModel model, string currentUserId, IList<string> roles)
         {
             var result = new Result<PodaciViewModel>();
             var podaci = _entity.Podaci.Where(m => m.Id == model.Id).FirstOrDefault();
             try
             {
-                podaci.Ime = model.Ime;
-                podaci.Starost = model.Starost;
-                podaci.DatumPrijema = model.DatumPrijema;
-                podaci.StatusId = (int)model.Status;
-                podaci.RasaId = (int)model.Rasa;
-                podaci.PolId = (int)model.Pol;
-                podaci.SterilisanId = (int)model.Sterilisan;
-                podaci.VakcinisanId = (int)model.Vakcinisan;
-                podaci.UserId = currentUserId;
+                foreach (var role in roles)
+                {
+                    if (role == "Admin")
+                    {
+                        podaci.Ime = model.Ime;
+                        podaci.Starost = model.Starost;
+                        podaci.DatumPrijema = model.DatumPrijema;
+                        podaci.StatusId = (int)model.Status;
+                        podaci.RasaId = (int)model.Rasa;
+                        podaci.PolId = (int)model.Pol;
+                        podaci.SterilisanId = (int)model.Sterilisan;
+                        podaci.VakcinisanId = (int)model.Vakcinisan;
+                        podaci.UserId = model.User;
 
-                _entity.SaveChanges();
+                        _entity.SaveChanges();
 
-                result.Succedded = true;
+                        result.Succedded = true;
+                    }
+                    else if(podaci.UserId == currentUserId)
+                    {
+                        podaci.Ime = model.Ime;
+                        podaci.Starost = model.Starost;
+                        podaci.DatumPrijema = model.DatumPrijema;
+                        podaci.StatusId = (int)StatusEnums.Na_čekanju;
+                        podaci.RasaId = (int)model.Rasa;
+                        podaci.PolId = (int)model.Pol;
+                        podaci.SterilisanId = (int)model.Sterilisan;
+                        podaci.VakcinisanId = (int)model.Vakcinisan;
+                        podaci.UserId = model.User;
+
+                        _entity.SaveChanges();
+
+                        result.Succedded = true;
+                    }
+                }
             }
             catch (Exception ex)
             {

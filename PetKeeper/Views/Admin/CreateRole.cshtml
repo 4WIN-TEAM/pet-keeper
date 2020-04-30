@@ -1,0 +1,78 @@
+﻿@using PetKeeper.Common
+@model PetKeeper.Models.RoleViewModel
+
+@{
+    ViewData["Title"] = "CreateRole";
+}
+
+<h1>Kreiraj rolu</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateRole" id="createForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="RoleId" class="form-control" hidden />
+            </div>
+            <div class="form-group">
+                <label>Ime role:</label>
+                <input asp-for="RoleName" class="form-control" id="roleName" />
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="submitButton" value="Kreiraj" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Roles">Nazad na listu</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.js"></script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+
+        var msg = @Html.Raw(Json.Serialize(Messages.CreatedSuccessfully));
+        var errorMsg = @Html.Raw(Json.Serialize(Messages.SomethingWentWrong));
+
+        $('#submitButton').click(function (e) {
+
+            var validated = true;
+            var roleName = $('#roleName').val();
+            var valid = $('#createForm').valid();
+            if (!valid) {
+                validated = false;
+            }
+            else {
+                e.preventDefault();
+            }
+            if (validated) {
+                var roleData = {
+                    RoleName: roleName
+                };
+            }
+            $.ajax({
+                dataType: "json",
+                data: roleData,
+                type: "POST",
+                url: "/Admin/CreateRole",
+                success: function (result) {
+                    if (result) {
+                        bootbox.alert(msg, function () {
+                            window.location.href = '/Admin/Roles'
+                        });
+                    }
+                    else {
+                        bootbox.alert(errorMsg);
+                    }
+                },
+            });
+
+        });
+    </script>
+}
