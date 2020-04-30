@@ -106,7 +106,7 @@ src: url("../fonts/Bitter-Bold.otf")
   margin-top: 2%;
 }
 
-.front-levo{
+.front-levo,.front-desno{
   font-family: "Bitter";
   font-style: italic;
   font-size: 3em;
@@ -124,6 +124,11 @@ src: url("../fonts/Bitter-Bold.otf")
   background-color: #593196;
 }
 
+.section2-row{
+  display: flex;
+  justify-content: center;
+}
+
 .list1 {
   text-align: center;
   justify-content: center;
@@ -132,7 +137,7 @@ src: url("../fonts/Bitter-Bold.otf")
   list-style: none;
   padding: 0;
   z-index: 100;
-  width: 100%;
+  width: 80%;
 }
 
 .list1, .collist1 {
@@ -181,8 +186,8 @@ src: url("../fonts/Bitter-Bold.otf")
 }
 
 .small-img{
-  width: 100px;
-  height: 230px;
+  width: 50%;
+  height: 100%;
 }
 
 .list1 li figure img {
@@ -192,6 +197,7 @@ src: url("../fonts/Bitter-Bold.otf")
 
 .list1 li .caption_list1 {
   padding: 5px 0;
+  margin: 20px;
 }
 
 .list1_title1 {
