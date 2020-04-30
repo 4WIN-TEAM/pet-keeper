@@ -17,20 +17,35 @@ namespace PetKeeper.Controllers
     {
         private readonly IDatabaseService _database;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public ReservationController(IDatabaseService database, UserManager<IdentityUser> userManager)
+        public ReservationController(IDatabaseService database, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _database = database;
             _userManager = userManager;
+            _roleManager = roleManager;
         }
         // GET: Reservation
-        public IActionResult Index()
+        public async Task<ActionResult> Index()
         {
             //var res = _database.GetData();
             //return View("Index");
-            var result = new Result<List<PodaciViewModel>>();
-            result = _database.GetData();
+            var currentUser = await _userManager.GetUserAsync(User);
+            var currentUserId = currentUser.Id;
 
+            var result = new Result<List<PodaciViewModel>>();
+            //result = _database.GetData(currentUserId);
+            if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admin"))
+                {
+                    result = _database.GetAllData(currentUserId);
+                }
+                else
+                {
+                    result = _database.GetData(currentUserId);
+                }
+            }
             if (result.Succedded)
             {
                 return View(result.Value);
@@ -125,8 +140,9 @@ namespace PetKeeper.Controllers
         {
             var currentUser = await _userManager.GetUserAsync(User);
             var currentUserId = currentUser.Id;
+            var roles = await _userManager.GetRolesAsync(currentUser);
 
-            var result = _database.Update(model, currentUserId);
+            var result = _database.Update(model, currentUserId, roles);
             if (ModelState.IsValid)
             {
                 if (result.Succedded)

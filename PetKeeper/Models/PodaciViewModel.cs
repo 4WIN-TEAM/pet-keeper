@@ -1,4 +1,7 @@
-﻿using PetKeeper.Common;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using PetKeeper.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +25,8 @@ namespace PetKeeper.Models
         public SterilisanEnums Sterilisan { get; set; }
         public VakcinisanEnums Vakcinisan { get; set; }
         public string User { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
         public StatusEnums Status { get; set; }
     }
 }

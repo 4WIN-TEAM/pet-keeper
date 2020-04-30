@@ -1,0 +1,69 @@
+﻿@using PetKeeper.Common
+@model PetKeeper.Models.RoleViewModel
+
+@{
+    ViewData["Title"] = "DeleteRole";
+}
+<br />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Ime role:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RoleName)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteRole">
+        <input asp-for="RoleId" id="deleteRoleId" class="form-control" hidden />
+        <input asp-for="RoleName" id="deleteRoleName" class="form-control" hidden />
+        <input type="submit" id="deleteRole" value="Izbriši" class="btn btn-danger" /> |
+        <a asp-action="Roles">Nazad na listu</a>
+    </form>
+</div>
+@section Scripts {
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.js"></script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+
+        var msg = @Html.Raw(Json.Serialize(Messages.DeletedSuccessfully));
+        var errorMsg = @Html.Raw(Json.Serialize(Messages.SomethingWentWrong));
+
+        $('#deleteRole').click(function (e) {
+
+            var roleId = $('#deleteRoleId').val();
+            var roleName = $('#deleteRoleName').val();
+
+            e.preventDefault();
+
+            var roleData = {
+                RoleName: roleName,
+                RoleId: roleId
+            }
+
+            $.ajax({
+                dataType: "json",
+                data: roleData,
+                type: "POST",
+                url: "/Admin/DeleteRole",
+                success: function (result) {
+                    if (result) {
+                        bootbox.alert(msg, function () {
+                            window.location.href = '/Admin/Roles'
+                        });
+                    }
+                    else {
+                        bootbox.alert(errorMsg);
+                    }
+                },
+                 error: function () {
+                    bootbox.alert(errorMsg);
+                }
+            });
+
+        });
+    </script>
+}
