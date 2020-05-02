@@ -88,13 +88,15 @@ body {
   margin-left: 10px;
   font-family:"Bitter";
   font-weight: bolder;
-  font-size: 1.6em;
+  font-size: 2vw;
 }
 
 /* centriranje menija na sredinu */
-.navbar-nav{
-  text-align: center;
-  justify-content: center;
+ .navbar-nav{
+   margin-left: 20px;
+   font-size: 1vw;
+  /* text-align: center;
+  justify-content: center; */
 }
 
 /* font texta navigation bara */
