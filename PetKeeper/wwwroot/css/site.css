@@ -12,7 +12,7 @@ a.navbar-brand {
 html {
   font-size: 14px;
 }
-@media (min-width: 1600px) {
+@media (min-width: 1200px) {
     .container {
         max-width: 2036px;
     }
@@ -60,18 +60,30 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-/* Front page */
+/* START PDESAVANJA FRONT PAGE-a */
 @font-face{
   font-family: "Bitter";
 src: url("../fonts/Bitter-Bold.otf")
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+/* pozadinska boja */
+.bg-primary{
+  background-color: #332548 !important;
 }
 
+/* pozadinska slika */
+body {
+  background-color: #e3ded2;
+  background-image: url("/images/bg1.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: auto;
+}
+/* END PDESAVANJA FRONT PAGE-a */
+
+/* START NAVIGATION BAR */
+/* logo i naslov - levi deo navigation bara */
 .navbar-brand{
   margin-left: 10px;
   font-family:"Bitter";
@@ -79,76 +91,91 @@ src: url("../fonts/Bitter-Bold.otf")
   font-size: 1.6em;
 }
 
+/* centriranje menija na sredinu */
 .navbar-nav{
   text-align: center;
   justify-content: center;
 }
 
+/* font texta navigation bara */
 .text-light {
   font-family:"Bitter";
 }
+/* END NAVIGATION BAR */
 
+/* START FRONT-ALL(srednji deo) */
+/* naslov na levoj strani */
 .naslov {
-  border: 5px solid #593196;
-  border-radius: 15px;
+  padding-left: 7%;
   text-align: center;
-  width: 50%;
+  width: auto;
   margin-top: 2%;
   margin-left: auto;
   margin-right: auto;
   font-family: "Bitter";
   font-style: italic;
-  background-color: #CB8AFF;
-  color: #593196;
+  font-size: 4vw;
+  color: #463266;
+  background-color: #9900ff00;
+  color: #FFFFFF;
+text-shadow: 0 0 3px rgb(255, 255, 255);
+
+}
+
+/* tekst ispod naslova */
+.naslov_ispod{
+  font-size: 1.5vw;
+  text-align: center;
+  background: rgba(52, 35, 68, 0.678);
+
+
 }
 
 .front-all{
   margin-top: 2%;
+  margin-bottom: 0%;
 }
 
-.front-levo,.front-desno{
+/* divs sa leve strane */
+.front-levo{
   font-family: "Bitter";
   font-style: italic;
-  font-size: 3em;
-  color: rgb(77, 59, 143);
+  color: #ffffff;
   /*background-color:#CB8AFF;*/
 }
 
+/* margina od navigation bar-a */
 .front-centar{
-  justify-content: end;
-  margin: 10px;
+  margin-top: 50px;
 }
 
+/* centralna slika */
+.front-centar img{
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+/* END FRONT-ALL(srednji deo) */
+
+
+/* START DONJI DEO FRONT PAGE-A */
 .section2{
-  padding: 52px 0 16px;
-  background-color: #593196;
+  padding: 30px 0 16px;
+  background-color: #332548;
 }
 
+.section2-container{
+  padding-top: 30px;;
+  padding-left: 7%;
+  padding-right: 7%;
+  /* background-color: #6c5b799f; */
+  }
 .section2-row{
   display: flex;
   justify-content: center;
-}
-
-.list1 {
-  text-align: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  list-style: none;
-  padding: 0;
-  z-index: 100;
-  width: 80%;
-}
-
-.list1, .collist1 {
-  display: flex;
-}
-
-.list1 li {
-  overflow: hidden;
-  position: relative;
-  list-style: none;
-  margin-bottom: 20px;
 }
 
 @media (min-width: 1200px){
@@ -157,11 +184,7 @@ src: url("../fonts/Bitter-Bold.otf")
   }
 }
 
-.pad {
-  padding: 0 !important;
-}
-
-.thumbnail {
+/* .thumbnail {
   line-height: 0 !important;
   position: relative;
   padding: 0;
@@ -170,59 +193,58 @@ src: url("../fonts/Bitter-Bold.otf")
   border-radius: 0;
   box-shadow: none;
   background: none;
-}
+} */
 
-.list1 li figure {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
+/* podesavanja slike */
 .img-thumbnail1 {
   padding: 5px;
-  border: 1px solid #7b7b7b;
+  border: 1px solid #c0c0c0;
   border-radius: 0;
   background: transparent;
-}
-
-.small-img{
-  width: 50%;
-  height: 100%;
-}
-
-.list1 li figure img {
+  height: auto;
+  width: auto;
   max-width: 100%;
-  max-height: 100%;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-.list1 li .caption_list1 {
-  padding: 5px 0;
-  margin: 20px;
+/* naslov i tekst ispod slike */
+.caption_list1 {
+  padding: 0 0;
+  margin: 10px;
 }
 
+/* naslov ispod slike */
 .list1_title1 {
-  text-align: left;
+  text-align: center;
   position: relative;
   display: block;
-  font-family: "Bitter";
+  font-family: 'Open Sans', sans-serif, "Bitter";
   font-size: 18px;
   line-height: 24px;
   font-weight: 800;
-  color: #FFF !important;
+  color: rgb(223, 223, 223) !important;
   padding: 0;
-  margin: 0 0 1px !important;
+  margin: 0 0 3px !important;
+  /* background-color: #BEAFC2; */
+
 }
 
+/* tekst ispod slike */
 p {
-  font-family: "Bitter";
+  font-family: 'Open Sans', sans-serif, "Bitter";
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
-  color: #9b9c9d;
+  color: #cccccc;
   margin: 0;
-  padding: 0;
+  padding: 3px;
   margin-bottom: 14px;
 }
+/* END DONJI DEO FRONT PAGE-A */
+
+
 .btn-sm {
     border-radius: 3px;
     width: 100px;
