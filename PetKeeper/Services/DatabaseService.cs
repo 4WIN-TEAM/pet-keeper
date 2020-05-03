@@ -35,6 +35,7 @@ namespace PetKeeper.Services
                     Ime = m.Ime,
                     Starost = m.Starost,
                     DatumPrijema = m.DatumPrijema,
+                    DatumOtpusta = m.DatumOtpusta,
                     Rasa = (RasaEnums)m.RasaId,
                     Pol = (PolEnums)m.PolId,
                     Sterilisan = (SterilisanEnums)m.SterilisanId,
@@ -63,6 +64,7 @@ namespace PetKeeper.Services
                     Ime = m.Ime,
                     Starost = m.Starost,
                     DatumPrijema = m.DatumPrijema,
+                    DatumOtpusta = m.DatumOtpusta,
                     Rasa = (RasaEnums)m.RasaId,
                     Pol = (PolEnums)m.PolId,
                     Sterilisan = (SterilisanEnums)m.SterilisanId,
@@ -90,6 +92,7 @@ namespace PetKeeper.Services
                 podaci.Ime = model.Ime;
                 podaci.Starost = model.Starost;
                 podaci.DatumPrijema = model.DatumPrijema;
+                podaci.DatumOtpusta = model.DatumOtpusta;
                 podaci.StatusId = (int)StatusEnums.Na_čekanju;
                 podaci.RasaId = (int)model.Rasa;
                 podaci.PolId = (int)model.Pol;
@@ -124,6 +127,7 @@ namespace PetKeeper.Services
                     Ime = m.Ime,
                     Starost = m.Starost,
                     DatumPrijema = m.DatumPrijema,
+                    DatumOtpusta = m.DatumOtpusta,
                     Rasa = (RasaEnums)m.RasaId,
                     Pol = (PolEnums)m.PolId,
                     Sterilisan = (SterilisanEnums)m.SterilisanId,
@@ -155,6 +159,7 @@ namespace PetKeeper.Services
                         podaci.Ime = model.Ime;
                         podaci.Starost = model.Starost;
                         podaci.DatumPrijema = model.DatumPrijema;
+                        podaci.DatumOtpusta = model.DatumOtpusta;
                         podaci.StatusId = (int)model.Status;
                         podaci.RasaId = (int)model.Rasa;
                         podaci.PolId = (int)model.Pol;
@@ -171,6 +176,7 @@ namespace PetKeeper.Services
                         podaci.Ime = model.Ime;
                         podaci.Starost = model.Starost;
                         podaci.DatumPrijema = model.DatumPrijema;
+                        podaci.DatumOtpusta = model.DatumOtpusta;
                         podaci.StatusId = (int)StatusEnums.Na_čekanju;
                         podaci.RasaId = (int)model.Rasa;
                         podaci.PolId = (int)model.Pol;
@@ -205,6 +211,7 @@ namespace PetKeeper.Services
                     Ime = m.Ime,
                     Starost = m.Starost,
                     DatumPrijema = m.DatumPrijema,
+                    DatumOtpusta = m.DatumOtpusta,
                     Rasa = (RasaEnums)m.RasaId,
                     Pol = (PolEnums)m.PolId,
                     Sterilisan = (SterilisanEnums)m.SterilisanId,

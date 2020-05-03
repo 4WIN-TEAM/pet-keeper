@@ -26,8 +26,12 @@
                                 @Html.DisplayNameFor(model => model.Starost)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.DatumPrijema)
+                                Datum prijema
                             </th>
+                            <th>
+                                Datum odjave
+                            </th>
+
                             <th>
                                 @Html.DisplayNameFor(model => model.Rasa)
                             </th>
@@ -63,6 +67,9 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.DatumPrijema)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DatumOtpusta)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Rasa)
@@ -137,6 +144,10 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.DatumPrijema)
                             </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DatumOtpusta)
+                            </td>
+
                             <td>
                                 @Html.DisplayFor(modelItem => item.Rasa)
                             </td>
@@ -219,6 +230,7 @@
                 var ime = $('#ime').val();
                 var starost = $('#starost').val();
                 var datumPrijema = $('#datumPrijema').val();
+                var datumOtpusta = $('#datumOtpusta').val();
                 var rasa = $('#rasa').find(":selected").val();
                 var pol = $('#pol').find(":selected").val();
                 var sterilisan = $('#sterilisan').find(":selected").val();
@@ -238,6 +250,7 @@
                         Ime: ime,
                         Starost: starost,
                         DatumPrijema: datumPrijema,
+                        DatumOtpusta: datumOtpusta,
                         Rasa: rasa,
                         Pol: pol,
                         Sterilisan: sterilisan,
@@ -305,6 +318,7 @@
                             var ime = $('#editIme').val();
                             var starost = $('#editStarost').val();
                             var datumPrijema = $('#editDatumPrijema').val();
+                            var datumOtpusta = $('#editDatumOtpusta').val();
                             var rasa = $('#editRasa').find(":selected").val();
                             var pol = $('#editPol').find(":selected").val();
                             var sterilisan = $('#editSterilisan').find(":selected").val();
@@ -328,6 +342,7 @@
                                     Ime: ime,
                                     Starost: starost,
                                     DatumPrijema: datumPrijema,
+                                    DatumOtpusta: datumOtpusta,
                                     Rasa: rasa,
                                     Pol: pol,
                                     Sterilisan: sterilisan,

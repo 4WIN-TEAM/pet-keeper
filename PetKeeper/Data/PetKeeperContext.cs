@@ -147,6 +147,8 @@ namespace PetKeeper.Data
             modelBuilder.Entity<Podaci>(entity =>
             {
                 entity.Property(e => e.DatumPrijema).HasColumnType("datetime");
+                
+                entity.Property(e => e.DatumOtpusta).HasColumnType("datetime");
 
                 entity.Property(e => e.Ime)
                     .IsRequired()

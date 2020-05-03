@@ -20,6 +20,7 @@ namespace PetKeeper.Models
         public string Ime { get; set; }
         public int Starost { get; set; }
         public DateTime DatumPrijema { get; set; }
+        public DateTime DatumOtpusta { get; set; }
         public RasaEnums Rasa { get; set; }
         public PolEnums Pol { get; set; }
         public SterilisanEnums Sterilisan { get; set; }

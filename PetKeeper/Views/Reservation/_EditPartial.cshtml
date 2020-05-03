@@ -35,6 +35,12 @@
                         <input asp-for="DatumPrijema" class="form-control" id="editDatumPrijema" />
                         <span asp-validation-for="DatumPrijema" class="text-danger"></span>
                     </div>
+                    <div class="form-group">
+                        <label asp-for="DatumOtpusta" class="control-label"></label>
+                        <input asp-for="DatumOtpusta" class="form-control" id="editDatumOtpusta" />
+                        <span asp-validation-for="DatumOtpusta" class="text-danger"></span>
+                    </div>
+
                     <div class="form-group" id="editRasa">
                         <label asp-for="Rasa" class="control-label"></label>
                         @Html.DropDownList("Rasa", Html.GetEnumSelectList<RasaEnums>(), new { @class = "form-control" })
