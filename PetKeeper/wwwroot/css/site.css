@@ -102,6 +102,7 @@ body {
 /* font texta navigation bara */
 .text-light {
   font-family:"Bitter";
+  font-size: 1vw;
 }
 /* END NAVIGATION BAR */
 
@@ -267,8 +268,17 @@ p {
 .btn-sm {
     border-radius: 3px;
     width: 100px;
+    font-weight: bold;
 }
 
 .btn-danger {
   background-color: #ff3333;
+}
+
+/* START REZERVACIJE */
+/* tabela */
+.rezervacije-tbl{
+  background-color: rgba(255, 255, 255, 0.822);
+  color: rgb(65, 65, 65);
+  width: auto;
 }
