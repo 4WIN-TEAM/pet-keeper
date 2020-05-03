@@ -167,6 +167,7 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
 .section2{
   padding: 30px 0 16px;
   background-color: #332548;
+  /* background-color: #695E93; */
 }
 
 .section2-container{
@@ -196,6 +197,21 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
   box-shadow: none;
   background: none;
 } */
+.bg-card1{
+  background-color:#8155BA;
+}
+
+.bg-card2{
+  background-color:#695E93;
+}
+
+.bg-card3{
+  background-color:#BEAFC2;
+}
+
+.bg-card4{
+  background-color:#8155BA;
+}
 
 /* podesavanja slike */
 .img-thumbnail1 {
@@ -222,8 +238,9 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
   text-align: center;
   position: relative;
   display: block;
-  font-family: 'Open Sans', sans-serif, "Bitter";
-  font-size: 18px;
+  font-family: "Bitter";
+  font-size: 1.2vw;
+  /* font-size: 18px; */
   line-height: 24px;
   font-weight: 800;
   color: rgb(223, 223, 223) !important;
@@ -239,7 +256,7 @@ p {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
-  color: #cccccc;
+  color: #ffffff;
   margin: 0;
   padding: 3px;
   margin-bottom: 14px;
