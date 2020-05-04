@@ -32,6 +32,7 @@ namespace PetKeeper.Controllers
             //return View("Index");
             var currentUser = await _userManager.GetUserAsync(User);
             var currentUserId = currentUser.Id;
+            var userName = currentUser.UserName;
 
             var result = new Result<List<PodaciViewModel>>();
             //result = _database.GetData(currentUserId);
@@ -93,8 +94,10 @@ namespace PetKeeper.Controllers
         {
             var currentUser = await _userManager.GetUserAsync(User);
             var currentUserId = currentUser.Id;
+            var userName = currentUser.UserName;
+            
            
-            var result = _database.AddData(model, currentUserId);
+            var result = _database.AddData(model, currentUserId, userName);
 
                 if (ModelState.IsValid)
                 {

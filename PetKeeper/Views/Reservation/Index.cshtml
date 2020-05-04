@@ -1,24 +1,27 @@
 ﻿@model IEnumerable<PetKeeper.Models.PodaciViewModel>
 
-    @{
+@{
     var podaciViewModel = new PodaciViewModel() { };
-    }
-    <partial name="_CreatePartial" for="@podaciViewModel">
+}
+<partial name="_CreatePartial" for="@podaciViewModel">
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static"
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static"
             data-keyboard="false" style="margin: 6px">
-            &nbsp;Kreiraj
-        </button>
-        <div id="openModal">
+        &nbsp;Kreiraj
+    </button>
+    <div id="openModal">
 
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div>
                 <table class="table rezervacije-tbl table-responsive-md btn-table ">
                     <thead class="thead-light">
                         <tr>
+                            <th>
+                                Korisniik
+                            </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.Ime)
                             </th>
@@ -44,9 +47,6 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.Vakcinisan)
                             </th>
-                            @*<th>
-                                @Html.DisplayNameFor(model => model.User)
-                            </th>*@
                             <th>
                                 @Html.DisplayNameFor(model => model.Status)
                             </th>
@@ -56,9 +56,12 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                        @if (item.Status.ToString() == "Odbijeno")
-                        {
+                            @if (item.Status.ToString() == "Odbijeno")
+                            {
                         <tr class="table-active">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Ime)
                             </td>
@@ -69,7 +72,7 @@
                                 @Html.DisplayFor(modelItem => item.DatumPrijema)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.DatumOtpusta)
+                                @Html.DisplayFor(modelItem => item.DatumOdjave)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Rasa)
@@ -89,52 +92,79 @@
                             <td>
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                @if (User.IsInRole("Admin"))
-                                {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                    onclick="getEdit(@item.Id)">Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                    onclick="getDetails(@item.Id)">Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
-                                    onclick="getDeleted(@item.Id)">Izbriši</button>
-                                }
-                                else
-                                {
-                                @if (item.Status.ToString() == "Prihvaćeno")
-                                {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                    onclick="getEdit(@item.Id)" disabled>Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                    onclick="getDetails(@item.Id)">Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
-                                    disabled>Izbriši</button>
-                                }
-                                else if (item.Status.ToString() == "Odbijeno")
-                                {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                    onclick="getEdit(@item.Id)" disabled>Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect" onclick="getDetails(@item.Id)"
-                                    disabled>Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
-                                    disabled>Izbriši</button>
-                                }
-                                else
-                                {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                    onclick="getEdit(@item.Id)">Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                    onclick="getDetails(@item.Id)">Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
-                                    onclick="getDeleted(@item.Id)">Izbriši</button>
-                                }
-                                }
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                                onclick="getEdit(@item.Id)">
+                                            Izmeni
+                                        </button>
+                                        <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
+                                                onclick="getDetails(@item.Id)">
+                                            Detalji
+                                        </button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
+                                                onclick="getDeleted(@item.Id)">
+                                            Izbriši
+                                        </button>
+                                    }
+                                    else
+                                    {
+                                        @if (item.Status.ToString() == "Prihvaćeno")
+                                        {
+                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                                    onclick="getEdit(@item.Id)" disabled>
+                                                Izmeni
+                                            </button>
+                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
+                                                    onclick="getDetails(@item.Id)">
+                                                Detalji
+                                            </button>
+                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
+                                                    disabled>
+                                                Izbriši
+                                            </button>
+                                        }
+                                        else if (item.Status.ToString() == "Odbijeno")
+                                        {
+                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                                    onclick="getEdit(@item.Id)" disabled>
+                                                Izmeni
+                                            </button>
+                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect" onclick="getDetails(@item.Id)"
+                                                    disabled>
+                                                Detalji
+                                            </button>
+                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
+                                                    disabled>
+                                                Izbriši
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                                    onclick="getEdit(@item.Id)">
+                                                Izmeni
+                                            </button>
+                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
+                                                    onclick="getDetails(@item.Id)">
+                                                Detalji
+                                            </button>
+                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
+                                                    onclick="getDeleted(@item.Id)">
+                                                Izbriši
+                                            </button>
+                                        }
+                                    }
                                 }
                             </td>
                         </tr>
-                        }
-                        else
-                        {
+                            }
+                            else
+                            {
                         <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Ime)
                             </td>
@@ -145,7 +175,7 @@
                                 @Html.DisplayFor(modelItem => item.DatumPrijema)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.DatumOtpusta)
+                                @Html.DisplayFor(modelItem => item.DatumOdjave)
                             </td>
 
                             <td>
@@ -166,79 +196,99 @@
                             <td>
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                @if (User.IsInRole("Admin"))
-                                {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                    onclick="getEdit(@item.Id)">Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                    onclick="getDetails(@item.Id)">Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
-                                    onclick="getDeleted(@item.Id)">Izbriši</button>
-                                }
-                                else
-                                {
-                                @if (item.Status.ToString() == "Prihvaćeno")
-                                {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                    onclick="getEdit(@item.Id)" disabled>Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                    onclick="getDetails(@item.Id)">Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
-                                    disabled>Izbriši</button>
-                                }
-                                else if (item.Status.ToString() == "Odbijeno")
-                                {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                    onclick="getEdit(@item.Id)" disabled>Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect" onclick="getDetails(@item.Id)"
-                                    disabled>Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
-                                    disabled>Izbriši</button>
-                                }
-                                else
-                                {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                    onclick="getEdit(@item.Id)">Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                    onclick="getDetails(@item.Id)">Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
-                                    onclick="getDeleted(@item.Id)">Izbriši</button>
-                                }
-                                }
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                                onclick="getEdit(@item.Id)">
+                                            Izmeni
+                                        </button>
+                                        <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
+                                                onclick="getDetails(@item.Id)">
+                                            Detalji
+                                        </button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
+                                                onclick="getDeleted(@item.Id)">
+                                            Izbriši
+                                        </button>
+                                    }
+                                    else
+                                    {
+                                        @if (item.Status.ToString() == "Prihvaćeno")
+                                        {
+                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                                    onclick="getEdit(@item.Id)" disabled>
+                                                Izmeni
+                                            </button>
+                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
+                                                    onclick="getDetails(@item.Id)">
+                                                Detalji
+                                            </button>
+                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
+                                                    disabled>
+                                                Izbriši
+                                            </button>
+                                        }
+                                        else if (item.Status.ToString() == "Odbijeno")
+                                        {
+                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                                    onclick="getEdit(@item.Id)" disabled>
+                                                Izmeni
+                                            </button>
+                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect" onclick="getDetails(@item.Id)"
+                                                    disabled>
+                                                Detalji
+                                            </button>
+                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
+                                                    disabled>
+                                                Izbriši
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                                    onclick="getEdit(@item.Id)">
+                                                Izmeni
+                                            </button>
+                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
+                                                    onclick="getDetails(@item.Id)">
+                                                Detalji
+                                            </button>
+                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
+                                                    onclick="getDeleted(@item.Id)">
+                                                Izbriši
+                                            </button>
+                                        }
+                                    }
                                 }
                             </td>
                         </tr>
-                        }
+                            }
                         }
                     </tbody>
                 </table>
-                </div>
-                <div class="col-sm-2"></div>
-
             </div>
+            <div class="col-sm-2"></div>
+
         </div>
+    </div>
 
 
-        @section Scripts {
+    @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
         <script type="text/javascript">
             $('#submitButton').click(function (e) {
-
                 var validated = true;
-
                 var ime = $('#ime').val();
                 var starost = $('#starost').val();
                 var datumPrijema = $('#datumPrijema').val();
-                var datumOtpusta = $('#datumOtpusta').val();
+                var datumOdjave = $('#datumOdjave').val();
                 var rasa = $('#rasa').find(":selected").val();
                 var pol = $('#pol').find(":selected").val();
                 var sterilisan = $('#sterilisan').find(":selected").val();
                 var vakcinisan = $('#vakcinisan').find(":selected").val();
 
-
                 var valid = $('#myModalForm').valid();
-
                 if (!valid) {
                     validated = false;
                 } else {
@@ -250,12 +300,11 @@
                         Ime: ime,
                         Starost: starost,
                         DatumPrijema: datumPrijema,
-                        DatumOtpusta: datumOtpusta,
+                        DatumOdjave: datumOdjave,
                         Rasa: rasa,
                         Pol: pol,
                         Sterilisan: sterilisan,
                         Vakcinisan: vakcinisan
-
                     }
                     $.ajax({
                         dataType: "json",
@@ -280,59 +329,47 @@
                                 case 401:
                                     bootbox.alert(
                                         "You don't have permission to access this resource ! (401 UNAUTHORIZED)"
-                                        );
+                                    );
                                     break;
                                 case 403:
                                     bootbox.alert(
                                         "You don't have permission to access this resource ! (403 FORBIDDEN)"
-                                        );
+                                    );
                                     break;
                                 default:
                                     window.location.href = '/Home/Error';
                                     break;
                             }
                         }
-
                     });
                 }
             });
-
             function getEdit(id) {
-
                 $.ajax({
                     dataType: "html",
                     type: "GET",
                     url: "/Reservation/Edit/" + id,
                     success: function (result) {
                         $('#openModal').html(result);
-
                         $('#myEditModal').modal('show');
-
                         $.validator.unobtrusive.parse($('#editModal'));
-
                         $('#submitButtonEdit').on('click', function (e) {
-
                             var validated = true;
-
                             var id = $('#editId').val();
                             var ime = $('#editIme').val();
                             var starost = $('#editStarost').val();
                             var datumPrijema = $('#editDatumPrijema').val();
-                            var datumOtpusta = $('#editDatumOtpusta').val();
+                            var datumOdjave = $('#editDatumOdjave').val();
                             var rasa = $('#editRasa').find(":selected").val();
                             var pol = $('#editPol').find(":selected").val();
                             var sterilisan = $('#editSterilisan').find(":selected").val();
                             var vakcinisan = $('#editVakcinisan').find(":selected").val();
                             var status = $('#editStatus').find(":selected").val();
                             var user = $('#editUser').val();
-
-
-
+                            var userName = $('#editUserName').val();
                             var valid = $('#editModal').valid();
-
                             if (!valid) {
                                 validated = false;
-
                             } else {
                                 e.preventDefault();
                             }
@@ -342,14 +379,14 @@
                                     Ime: ime,
                                     Starost: starost,
                                     DatumPrijema: datumPrijema,
-                                    DatumOtpusta: datumOtpusta,
+                                    DatumOdjave: datumOdjave,
                                     Rasa: rasa,
                                     Pol: pol,
                                     Sterilisan: sterilisan,
                                     Vakcinisan: vakcinisan,
                                     Status: status,
-                                    User: user
-
+                                    User: user,
+                                    UserName: userName
                                 };
                             }
                             $.ajax({
@@ -380,12 +417,12 @@
                             case 401:
                                 bootbox.alert(
                                     "You don't have permission to access this resource ! (401 UNAUTHORIZED)"
-                                    );
+                                );
                                 break;
                             case 403:
                                 bootbox.alert(
                                     "You don't have permission to access this resource ! (403 FORBIDDEN)"
-                                    );
+                                );
                                 break;
                             default:
                                 window.location.href = '/Home/Error';
@@ -394,31 +431,26 @@
                     }
                 });
             }
-
             function getDetails(id) {
-
                 $.ajax({
                     dataType: "html",
                     type: "GET",
                     url: "/Reservation/Details/" + id,
                     success: function (result) {
-
                         $('#openModal').html(result);
                         $('#myDetailsModal').modal();
-
-
                     },
                     error: function (request, status, error) {
                         switch (request.status) {
                             case 401:
                                 bootbox.alert(
                                     "You don't have permission to access this resource ! (401 UNAUTHORIZED)"
-                                    );
+                                );
                                 break;
                             case 403:
                                 bootbox.alert(
                                     "You don't have permission to access this resource ! (403 FORBIDDEN)"
-                                    );
+                                );
                                 break;
                             default:
                                 window.location.href = '/Home/Error';
@@ -426,11 +458,8 @@
                         }
                     }
                 });
-
             }
-
             function getDeleted(id) {
-
                 bootbox.confirm({
                     message: "Do you want to delete this?",
                     buttons: {
@@ -462,12 +491,12 @@
                                         case 401:
                                             bootbox.alert(
                                                 "You don't have permission to access this resource ! (401 UNAUTHORIZED)"
-                                                );
+                                            );
                                             break;
                                         case 403:
                                             bootbox.alert(
                                                 "You don't have permission to access this resource! (403 FORBIDDEN)"
-                                                );
+                                            );
                                             break;
                                         default:
                                             window.location.href = '/Home/Error';
@@ -476,10 +505,8 @@
                                 }
                             });
                         }
-
                     }
                 });
-
             }
         </script>
-        }
+    }

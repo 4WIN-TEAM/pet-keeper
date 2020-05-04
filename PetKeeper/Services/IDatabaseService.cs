@@ -11,7 +11,7 @@ namespace PetKeeper.Services
     {
         Result<List<PodaciViewModel>> GetData(string currentUserId);
         Result<List<PodaciViewModel>> GetAllData(string currentUserId);
-        IResult<NoValue> AddData(PodaciViewModel model, string currentUserId);
+        IResult<NoValue> AddData(PodaciViewModel model, string currentUserId,string userName);
         IResult<PodaciViewModel> GetEdit(long id, string currentUserId);
         IResult<PodaciViewModel> Update(PodaciViewModel model, string currentUserId, IList<string> roles);
         IResult<PodaciViewModel> GetDetails(long id, string currentUserId);
