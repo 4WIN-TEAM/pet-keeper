@@ -12,11 +12,11 @@ a.navbar-brand {
 html {
   font-size: 14px;
 }
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
     .container {
         max-width: 2036px;
     }
-}
+} */
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -38,7 +38,7 @@ button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
-
+ 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -134,10 +134,11 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
 
 }
 
-.front-all{
+/* .front-all{
   margin-top: 2%;
   margin-bottom: 0%;
-}
+  width: 99%;
+} */
 
 /* divs sa leve strane */
 .front-levo{
@@ -149,7 +150,7 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
 
 /* margina od navigation bar-a */
 .front-centar{
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 /* centralna slika */
@@ -172,7 +173,7 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
 }
 
 .section2-container{
-  padding-top: 30px;;
+  padding-top: 30px;
   padding-left: 7%;
   padding-right: 7%;
   /* background-color: #6c5b799f; */
@@ -267,7 +268,7 @@ p {
 
 .btn-sm {
     border-radius: 3px;
-    width: 100px;
+    width: auto;
     font-weight: bold;
 }
 
@@ -278,7 +279,34 @@ p {
 /* START REZERVACIJE */
 /* tabela */
 .rezervacije-tbl{
-  background-color: rgba(255, 255, 255, 0.822);
+  background-color:#f3f3f3;
   color: rgb(65, 65, 65);
-  width: auto;
+  font-family: "Bitter";
+  margin: auto;
+  width: 50% !important; 
+
 }
+
+.btn-kreiraj{
+  display: flex;
+  justify-content: center;
+  font-family: "Bitter";
+  border-radius: 7px;
+  
+}
+
+.btn-kreiraj h4{
+  margin-bottom: 0;
+}
+
+.login-scr{
+  max-width: 70%;
+  margin: auto;
+  margin-top: 150px;
+  background-color:whitesmoke ;
+  color: #332548;
+  
+}
+/* .table-fit {
+  width: 1px;
+} */

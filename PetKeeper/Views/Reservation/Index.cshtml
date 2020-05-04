@@ -5,20 +5,16 @@
     }
     <partial name="_CreatePartial" for="@podaciViewModel">
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static"
-            data-keyboard="false" style="margin: 6px">
-            &nbsp;Kreiraj
-        </button>
         <div id="openModal">
 
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                <table class="table rezervacije-tbl table-responsive-md btn-table ">
-                    <thead class="thead-light">
-                        <tr>
+        <div class="container-fluid">
+            <div class="row justify-content-center"style="margin: auto">
+                <div class="col-lg-12 col-auto">
+                    <div class="table-responsive">
+                <table class="table text-nowrap rezervacije-tbl table-borderless">
+                    <thead class="thead-dark">
+                        <tr >
                             <th>
                                 @Html.DisplayNameFor(model => model.Ime)
                             </th>
@@ -89,20 +85,20 @@
                             <td>
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                @if (User.IsInRole("Admin"))
+                                @if (User.IsInRole("Admin")) //admin activni red (odbijeno)
                                 {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-outline-primary btn-sm"
                                     onclick="getEdit(@item.Id)">Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-outline-info btn-sm m-0"
                                     onclick="getDetails(@item.Id)">Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-outline-danger btn-sm m-0"
                                     onclick="getDeleted(@item.Id)">Izbriši</button>
                                 }
                                 else
                                 {
                                 @if (item.Status.ToString() == "Prihvaćeno")
                                 {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-primary"
                                     onclick="getEdit(@item.Id)" disabled>Izmeni</button>
                                 <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
                                     onclick="getDetails(@item.Id)">Detalji</button>
@@ -166,42 +162,43 @@
                             <td>
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                @if (User.IsInRole("Admin"))
+                                @if (User.IsInRole("Admin")) //admin rezervacija
                                 {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-outline-primary btn-sm"
                                     onclick="getEdit(@item.Id)">Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-outline-info btn-sm"
                                     onclick="getDetails(@item.Id)">Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-outline-danger btn-sm"
                                     onclick="getDeleted(@item.Id)">Izbriši</button>
                                 }
                                 else
                                 {
-                                @if (item.Status.ToString() == "Prihvaćeno")
+                                @if (item.Status.ToString() == "Prihvaćeno") //user prihvaceno
                                 {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-outline-primary btn-sm"
                                     onclick="getEdit(@item.Id)" disabled>Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-outline-info btn-sm"
                                     onclick="getDetails(@item.Id)">Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
+                                <button type="button" class="btn btn-outline-danger btn-sm" onclick="getDeleted(@item.Id)"
                                     disabled>Izbriši</button>
                                 }
-                                else if (item.Status.ToString() == "Odbijeno")
+                                else if (item.Status.ToString() == "Odbijeno") //user odbijeno
                                 {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-outline-primary btn-sm"
                                     onclick="getEdit(@item.Id)" disabled>Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect" onclick="getDetails(@item.Id)"
+                                <button type="button" class="btn btn-outline-info btn-sm m-0" onclick="getDetails(@item.Id)"
                                     disabled>Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
+                                <button type="button" class="btn btn-outline-danger btn-sm m-0" onclick="getDeleted(@item.Id)"
                                     disabled>Izbriši</button>
                                 }
                                 else
                                 {
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
+                                //user na cekanju
+                                <button type="button" class="btn btn-outline-primary btn-sm"
                                     onclick="getEdit(@item.Id)">Izmeni</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-outline-info btn-sm"
                                     onclick="getDetails(@item.Id)">Detalji</button>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
+                                <button type="button" class="btn btn-outline-danger btn-sm"
                                     onclick="getDeleted(@item.Id)">Izbriši</button>
                                 }
                                 }
@@ -212,9 +209,15 @@
                         }
                     </tbody>
                 </table>
-                </div>
-                <div class="col-sm-2"></div>
+                <div class="btn-kreiraj">
+                        <button type="button" class="btn btn-primary btn-kreiraj" data-toggle="modal" data-target="#myModal" data-backdrop="static"
+            data-keyboard="false" style="margin: 6px;background-color: #332548;">
+            <h4> KREIRAJ NOVU REZERVACIJU</h4>
+        </button>
+        </div>
 
+                </div>
+                </div>
             </div>
         </div>
 
