@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using PetKeeper.Models;
 
 namespace PetKeeper.Data
 {
@@ -146,9 +145,9 @@ namespace PetKeeper.Data
 
             modelBuilder.Entity<Podaci>(entity =>
             {
+                entity.Property(e => e.DatumOdjave).HasColumnType("datetime");
+
                 entity.Property(e => e.DatumPrijema).HasColumnType("datetime");
-                
-                entity.Property(e => e.DatumOtpusta).HasColumnType("datetime");
 
                 entity.Property(e => e.Ime)
                     .IsRequired()
@@ -157,6 +156,10 @@ namespace PetKeeper.Data
                 entity.Property(e => e.UserId)
                     .IsRequired()
                     .HasMaxLength(450);
+
+                entity.Property(e => e.UserName)
+                    .IsRequired()
+                    .HasMaxLength(256);
 
                 entity.HasOne(d => d.Pol)
                     .WithMany(p => p.Podaci)
@@ -228,7 +231,5 @@ namespace PetKeeper.Data
                 entity.Property(e => e.Name).HasMaxLength(50);
             });
         }
-
-        public DbSet<PetKeeper.Models.PodaciViewModel> PodaciViewModel { get; set; }
     }
 }

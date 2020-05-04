@@ -20,12 +20,13 @@ namespace PetKeeper.Models
         public string Ime { get; set; }
         public int Starost { get; set; }
         public DateTime DatumPrijema { get; set; }
-        public DateTime DatumOtpusta { get; set; }
+        public DateTime DatumOdjave { get; set; }
         public RasaEnums Rasa { get; set; }
         public PolEnums Pol { get; set; }
         public SterilisanEnums Sterilisan { get; set; }
         public VakcinisanEnums Vakcinisan { get; set; }
         public string User { get; set; }
+        public string UserName { get; set; }
 
         [JsonConverter(typeof(StringEnumConverter))]
         public StatusEnums Status { get; set; }

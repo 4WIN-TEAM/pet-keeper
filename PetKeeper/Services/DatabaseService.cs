@@ -35,13 +35,14 @@ namespace PetKeeper.Services
                     Ime = m.Ime,
                     Starost = m.Starost,
                     DatumPrijema = m.DatumPrijema,
-                    DatumOtpusta = m.DatumOtpusta,
+                    DatumOdjave = m.DatumOdjave,
                     Rasa = (RasaEnums)m.RasaId,
                     Pol = (PolEnums)m.PolId,
                     Sterilisan = (SterilisanEnums)m.SterilisanId,
                     Vakcinisan = (VakcinisanEnums)m.VakcinisanId,
                     User = m.UserId,
-                    Status = (StatusEnums)m.StatusId
+                    Status = (StatusEnums)m.StatusId,
+                    UserName = m.UserName
                 }).ToList();
                 result.Succedded = true;
             }
@@ -64,14 +65,15 @@ namespace PetKeeper.Services
                     Ime = m.Ime,
                     Starost = m.Starost,
                     DatumPrijema = m.DatumPrijema,
-                    DatumOtpusta = m.DatumOtpusta,
+                    DatumOdjave = m.DatumOdjave,
                     Rasa = (RasaEnums)m.RasaId,
                     Pol = (PolEnums)m.PolId,
                     Sterilisan = (SterilisanEnums)m.SterilisanId,
                     Vakcinisan = (VakcinisanEnums)m.VakcinisanId,
                     User = m.UserId,
-                    Status = (StatusEnums)m.StatusId
-                }).ToList();
+                    Status = (StatusEnums)m.StatusId,
+                    UserName = m.UserName
+                    }).ToList();
                 result.Succedded = true;
             }
             catch (Exception ex)
@@ -82,7 +84,7 @@ namespace PetKeeper.Services
             return result;
         }
 
-        public IResult<NoValue> AddData(PodaciViewModel model, string currentUserId)
+        public IResult<NoValue> AddData(PodaciViewModel model, string currentUserId, string userName)
         {
             var result = new Result<NoValue>();
             var podaci = new Podaci();
@@ -92,13 +94,14 @@ namespace PetKeeper.Services
                 podaci.Ime = model.Ime;
                 podaci.Starost = model.Starost;
                 podaci.DatumPrijema = model.DatumPrijema;
-                podaci.DatumOtpusta = model.DatumOtpusta;
+                podaci.DatumOdjave = model.DatumOdjave;
                 podaci.StatusId = (int)StatusEnums.Na_čekanju;
                 podaci.RasaId = (int)model.Rasa;
                 podaci.PolId = (int)model.Pol;
                 podaci.SterilisanId = (int)model.Sterilisan;
                 podaci.VakcinisanId = (int)model.Vakcinisan;
                 podaci.UserId = currentUserId;
+                podaci.UserName = userName;
 
                 _entity.Podaci.Add(podaci);
                 _entity.SaveChanges();
@@ -127,13 +130,14 @@ namespace PetKeeper.Services
                     Ime = m.Ime,
                     Starost = m.Starost,
                     DatumPrijema = m.DatumPrijema,
-                    DatumOtpusta = m.DatumOtpusta,
+                    DatumOdjave = m.DatumOdjave,
                     Rasa = (RasaEnums)m.RasaId,
                     Pol = (PolEnums)m.PolId,
                     Sterilisan = (SterilisanEnums)m.SterilisanId,
                     Vakcinisan = (VakcinisanEnums)m.VakcinisanId,
                     User = m.UserId,
-                    Status = (StatusEnums)m.StatusId
+                    Status = (StatusEnums)m.StatusId,
+                    UserName = m.UserName
                 }).Single();
                 result.Succedded = true;
             }
@@ -159,13 +163,14 @@ namespace PetKeeper.Services
                         podaci.Ime = model.Ime;
                         podaci.Starost = model.Starost;
                         podaci.DatumPrijema = model.DatumPrijema;
-                        podaci.DatumOtpusta = model.DatumOtpusta;
+                        podaci.DatumOdjave = model.DatumOdjave;
                         podaci.StatusId = (int)model.Status;
                         podaci.RasaId = (int)model.Rasa;
                         podaci.PolId = (int)model.Pol;
                         podaci.SterilisanId = (int)model.Sterilisan;
                         podaci.VakcinisanId = (int)model.Vakcinisan;
                         podaci.UserId = model.User;
+                        podaci.UserName = model.UserName;
 
                         _entity.SaveChanges();
 
@@ -176,13 +181,14 @@ namespace PetKeeper.Services
                         podaci.Ime = model.Ime;
                         podaci.Starost = model.Starost;
                         podaci.DatumPrijema = model.DatumPrijema;
-                        podaci.DatumOtpusta = model.DatumOtpusta;
+                        podaci.DatumOdjave = model.DatumOdjave;
                         podaci.StatusId = (int)StatusEnums.Na_čekanju;
                         podaci.RasaId = (int)model.Rasa;
                         podaci.PolId = (int)model.Pol;
                         podaci.SterilisanId = (int)model.Sterilisan;
                         podaci.VakcinisanId = (int)model.Vakcinisan;
                         podaci.UserId = model.User;
+                        podaci.UserName = model.UserName;
 
                         _entity.SaveChanges();
 
@@ -211,13 +217,14 @@ namespace PetKeeper.Services
                     Ime = m.Ime,
                     Starost = m.Starost,
                     DatumPrijema = m.DatumPrijema,
-                    DatumOtpusta = m.DatumOtpusta,
+                    DatumOdjave = m.DatumOdjave,
                     Rasa = (RasaEnums)m.RasaId,
                     Pol = (PolEnums)m.PolId,
                     Sterilisan = (SterilisanEnums)m.SterilisanId,
                     Vakcinisan = (VakcinisanEnums)m.VakcinisanId,
                     User = m.UserId,
-                    Status = (StatusEnums)m.StatusId
+                    Status = (StatusEnums)m.StatusId,
+                    UserName = m.UserName
                 }).Single();
                 result.Succedded = true;
             }
