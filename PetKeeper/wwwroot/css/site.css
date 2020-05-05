@@ -66,6 +66,18 @@ body {
 src: url("../fonts/Bitter-Bold.otf")
 }
 
+@font-face{
+  font-family: "Bitter-reg";
+src: url("../fonts/Bitter-Regular.otf")
+}
+
+@font-face{
+  font-family: "SourceSansPro";
+src: url("../fonts/SourceSansPro-Regular.ttf")
+}
+
+
+
 /* pozadinska boja */
 .bg-primary{
   background-color: #332548 !important;
@@ -88,13 +100,12 @@ body {
   margin-left: 10px;
   font-family:"Bitter";
   font-weight: bolder;
-  font-size: 2vw;
+  font-size: 2.5em;
 }
 
 /* centriranje menija na sredinu */
  .navbar-nav{
    margin-left: 20px;
-   font-size: 1vw;
   /* text-align: center;
   justify-content: center; */
 }
@@ -102,7 +113,13 @@ body {
 /* font texta navigation bara */
 .text-light {
   font-family:"Bitter";
-  font-size: 1vw;
+  font-size: 1.5vh;
+}
+
+@media (max-width: 1100px){
+  .text-light{
+    font-size: 1em;
+  }
 }
 /* END NAVIGATION BAR */
 
@@ -122,7 +139,6 @@ body {
   background-color: #9900ff00;
   color: #FFFFFF;
 text-shadow: 0 0 3px rgb(255, 255, 255);
-
 }
 
 /* tekst ispod naslova */
@@ -130,22 +146,13 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
   font-size: 1.5vw;
   text-align: center;
   background: rgba(52, 35, 68, 0.678);
-
-
 }
-
-/* .front-all{
-  margin-top: 2%;
-  margin-bottom: 0%;
-  width: 99%;
-} */
 
 /* divs sa leve strane */
 .front-levo{
   font-family: "Bitter";
   font-style: italic;
   color: #ffffff;
-  /*background-color:#CB8AFF;*/
 }
 
 /* margina od navigation bar-a */
@@ -272,6 +279,13 @@ p {
     font-weight: bold;
 }
 
+@media (max-width: 1400px){
+  .btn-sm{
+  font-size: 0.9em;
+}
+}
+
+
 .btn-danger {
   background-color: #ff3333;
 }
@@ -281,10 +295,16 @@ p {
 .rezervacije-tbl{
   background-color:#f3f3f3;
   color: rgb(65, 65, 65);
-  font-family: "Bitter";
+  font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 16px;
   margin: auto;
-  width: 50% !important; 
+  width: 50% !important;
+}
 
+@media (max-width: 1400px){
+  .rezervacije-tbl{
+    font-size: 0.9em;
+  }
 }
 
 .btn-kreiraj{
@@ -299,14 +319,48 @@ p {
   margin-bottom: 0;
 }
 
+.btn-kreiraj button{
+  background-color: #a991d4;
+  color: #ffffff;
+
+}
+
+/* END REZERVACIJE */
+
+/* START LOGIN */
 .login-scr{
   max-width: 70%;
   margin: auto;
   margin-top: 150px;
   background-color:whitesmoke ;
   color: #332548;
-  
 }
-/* .table-fit {
-  width: 1px;
-} */
+/* END LOGIN */
+
+/* START KONTAKT */
+.kontakt_naslov{
+  text-align: center;
+  width: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Bitter";
+  font-style: italic;
+  font-size: 4vw;
+  color: #463266;
+  color: #FFFFFF;
+text-shadow: 0 0 3px rgb(255, 255, 255);
+}
+
+.kontakt-row{
+  background-color: #8200be65;
+}
+
+.kontakt-main{
+  background-color: #e3ded2;
+  text-align: center;
+}
+
+
+/* END KONTAKT */

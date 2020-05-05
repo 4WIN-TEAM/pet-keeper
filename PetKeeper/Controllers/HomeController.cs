@@ -20,6 +20,18 @@ namespace PetKeeper.Controllers
             return View();
         }
 
+        public IActionResult About(){
+            return View("O_nama");
+        }
+
+        public IActionResult Gallery(){
+            return View("Galerija");
+        }
+
+        public IActionResult Contact(){
+            return View("Kontakt");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
