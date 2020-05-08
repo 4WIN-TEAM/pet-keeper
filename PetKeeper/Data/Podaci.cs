@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PetKeeper.Data
 {
-    public partial class Podaci
+    public partial class Podaci : Rasa
     {
         public long Id { get; set; }
         public string Ime { get; set; }
@@ -23,5 +23,29 @@ namespace PetKeeper.Data
         public virtual Sterilisan Sterilisan { get; set; }
         public virtual AspNetUsers User { get; set; }
         public virtual Vakcinisan Vakcinisan { get; set; }
+
+        public Vakcinisan Vakcinisan1
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Sterilisan Sterilisan1
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Pol Pol1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
