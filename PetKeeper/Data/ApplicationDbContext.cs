@@ -12,13 +12,5 @@ namespace PetKeeper.Data
             : base(options)
         {
         }
-
-        internal Migrations.ApplicationDbContextModelSnapshot ApplicationDbContextModelSnapshot
-        {
-            get => default;
-            set
-            {
-            }
-        }
     }
 }

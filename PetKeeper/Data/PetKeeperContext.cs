@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace PetKeeper.Data
 {
-    public partial class PetKeeperContext : AspNetUsers
+    public partial class PetKeeperContext : DbContext
     {
         public PetKeeperContext()
         {
@@ -28,46 +28,6 @@ namespace PetKeeper.Data
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<Sterilisan> Sterilisan { get; set; }
         public virtual DbSet<Vakcinisan> Vakcinisan { get; set; }
-
-        public Pol Pol1
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public Rasa Rasa1
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public Status Status1
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public Sterilisan Sterilisan1
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public Vakcinisan Vakcinisan1
-        {
-            get => default;
-            set
-            {
-            }
-        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PetKeeper.Data
 {
-    public partial class Status : Podaci
+    public partial class Status
     {
         public Status()
         {
