@@ -1,20 +1,168 @@
 @{
-    ViewData["Title"] = "Kontakt";
+ViewData["Title"] = "Kontakt";
 }
-
-<div class="container-fluid">
-    <div class="row kontakt-row">
-        <div class="kontakt_naslov"><h1>Kontakt</h1></div>
-    </div>
-    <div class="row kontakt-main">
-        <div class="col-md-6">
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0">
+</script>
+<!-- <div class="container"> -->
+<!-- <div class="row kontakt-row">
+        <div class="kontakt_naslov">
+            <h1>Kontakt</h1>
+        </div>
+    </div> -->
+<!-- <div class="row kontakt-main col-md-12"> -->
+<!-- <div class="col-md-6">
             <h1>
                 Lokacija
             </h1>
-        </div>
-        <div class="col-md-6">
-            Kontakt informacije
+            <div class="mapa">
+                <div id="map">
+                    <img src="/images/mapa.png">
+                </div>
+            </div>
+        </div> -->
+<!-- <div class="col-md-12"> -->
+<!-- FORMA -->
+<div class="container gallery-container">
+
+    <h1></h1><br>
+
+    <h2 class="page-description text-center">Obratite nam se ako imate bilo kakvih pitanja!</h2>
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <form class="contact100-form validate-form">
+                <span class="contact100-form-title">
+                    Pošaljite nam poruku
+                </span>
+
+                <label class="label-input100" for="first-name">Recite nam vaše ime *</label>
+                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+                    <input id="first-name" class="input100" type="text" name="first-name" placeholder="Ime">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+                    <input class="input100" type="text" name="last-name" placeholder="Prezime">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <label class="label-input100" for="email">Upišite vaš e-mail *</label>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <label class="label-input100" for="phone">Upišite broj telefona</label>
+                <div class="wrap-input100">
+                    <input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +381 66 68864775">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <label class="label-input100" for="message">Poruka *</label>
+                <div class="wrap-input100 validate-input" data-validate="Message is required">
+                    <textarea id="message" class="input100" name="message" placeholder="Napišite poruku"></textarea>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        Pošaljite poruku
+                    </button>
+                </div>
+            </form>
+
+            <div class="contact100-more flex-col-c-m" style="background-image: url('/images/bg-01.jpg');">
+                <div class="flex-w size1 p-b-47">
+                    <div class="tz-gallery tz-kontakt">
+                        <div class="col-sm-12 col-md-12">
+                            <a class="lightbox" href="/images/mapa.png">
+                                <img src="/images/mapa.png" alt="Bridge">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="txt1 p-r-25">
+                        <span class="lnr lnr-map-marker"></span>
+                    </div>
+
+                    <div class="flex-col size2">
+                        <span class="txt1 p-b-20">
+                            Adresa
+                        </span>
+
+                        <span class="txt2">
+                            Novi Sad, Španskih boraca 55, Vojvodina, SRBIJA
+                        </span>
+
+                    </div>
+                </div>
+
+                <div class="dis-flex size1 p-b-47">
+                    <div class="txt1 p-r-25">
+                        <span class="lnr lnr-phone-handset"></span>
+                    </div>
+
+                    <div class="flex-col size2">
+                        <span class="txt1 p-b-20">
+                            Nazovite nas!
+                        </span>
+
+                        <span class="txt3">
+                            +381 64 897654
+                        </span>
+                    </div>
+                </div>
+
+                <div class="dis-flex size1 p-b-47">
+                    <div class="txt1 p-r-25">
+                        <span class="lnr lnr-envelope"></span>
+                    </div>
+
+                    <div class="flex-col size2">
+                        <span class="txt1 p-b-20">
+                            Pošaljite nam e-mail poruku
+                        </span>
+
+                        <span class="txt3">
+                            contact@petkeeper.com
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="soc-icons">
+                        <!--Facebook-->
+                        <a class="fb-ic mr-4" role="button"><i class="fab fa-lg fa-facebook-f"></i></a>
+                        <!--Twitter-->
+                        <a class="tw-ic mr-4" role="button"><i class="fab fa-lg fa-twitter"></i></a>
+                        <!--Google +-->
+                        <a class="gplus-ic mr-4" role="button"><i class="fab fa-lg fa-google-plus-g"></i></a>
+                        <!--Linkedin-->
+                        <a class="li-ic mr-4" role="button"><i class="fab fa-lg fa-linkedin-in"></i></a>
+        
+                    </div>
+
+                </div>
+                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/"  ></div>
+
+            </div>
+
         </div>
     </div>
+
 </div>
 
+
+
+<div id="dropDownSelect1"></div>
+<!-- END FORMA -->
+
+
+
+
+
+
+
+
+
+
+<!-- </div>
+    </div>
+</div> -->

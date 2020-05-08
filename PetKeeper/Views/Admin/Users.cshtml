@@ -1,49 +1,42 @@
 ﻿@using PetKeeper.Common
 @model IEnumerable<PetKeeper.Models.UserViewModel>
 
-@{
+    @{
     ViewData["Title"] = "Users";
-}
+    }
 
-<h1>Korisnici</h1>
-
-@*<p>
-        <a asp-action="CreateU">Create New</a>
-    </p>*@
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Korisničko ime
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Role
-            </th>
-            <th>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Role)
-                </td>
-                <td>
-                    <a asp-action="AddRole" , asp-route-id="@item.Id">Dodaj/Promeni rolu</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 login-scr ">
+                <h2>Korisnici</h2> <br>
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Korisničko ime</th>
+                                    <th>Email</th>
+                                    <th>Uloga</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Role)</td>
+                                    <td><a asp-action="AddRole" , asp-route-id="@item.Id"><i
+                                                class="fas fa-2x fa-edit"></i></a></td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -51,7 +51,7 @@ body {
   margin-bottom: 60px;
 }
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
@@ -112,13 +112,15 @@ body {
 
 /* font texta navigation bara */
 .text-light {
-  font-family:"Bitter";
-  font-size: 1.5vh;
+  /* font-family:"Bitter"; */
+  font-size: 1.7vh;
+  font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
+
 }
 
-@media (max-width: 1100px){
+@media (max-width: 1200px){
   .text-light{
-    font-size: 1em;
+    font-size: 0.8em;
   }
 }
 /* END NAVIGATION BAR */
@@ -141,11 +143,24 @@ body {
 text-shadow: 0 0 3px rgb(255, 255, 255);
 }
 
+@media (max-width: 1200px){
+  .naslov{
+    font-size: 1.3em;
+  }
+}
+
+
 /* tekst ispod naslova */
 .naslov_ispod{
   font-size: 1.5vw;
   text-align: center;
   background: rgba(52, 35, 68, 0.678);
+}
+
+@media (max-width: 1200px){
+  .naslov_ispod{
+    font-size: 1em;
+  }
 }
 
 /* divs sa leve strane */
@@ -256,8 +271,14 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
   padding: 0;
   margin: 0 0 3px !important;
   /* background-color: #BEAFC2; */
-
 }
+
+@media (max-width: 1200px){
+  .list1_title1{
+    font-size: 1.3em;
+  }
+}
+
 
 /* tekst ispod slike */
 p {
@@ -322,18 +343,27 @@ p {
 .btn-kreiraj button{
   background-color: #a991d4;
   color: #ffffff;
-
 }
 
+.podaci p{
+  font-family: "Bitter";
+  font-size: 1.1em;
+}
+
+/* .btn-reserve{
+  background-color: #c0c0c0;
+} */
 /* END REZERVACIJE */
 
 /* START LOGIN */
 .login-scr{
+  padding: 20px;
   max-width: 70%;
   margin: auto;
   margin-top: 150px;
   background-color:whitesmoke ;
   color: #332548;
+  font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 /* END LOGIN */
 
@@ -341,8 +371,8 @@ p {
 .kontakt_naslov{
   text-align: center;
   width: auto;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
   margin-left: auto;
   margin-right: auto;
   font-family: "Bitter";
@@ -353,14 +383,76 @@ p {
 text-shadow: 0 0 3px rgb(255, 255, 255);
 }
 
+.text-center{
+  margin-top: 40px;
+}
+
 .kontakt-row{
   background-color: #8200be65;
 }
 
 .kontakt-main{
-  background-color: #e3ded2;
+  background-color: #e3ded2b0;
   text-align: center;
+  font-family: "Bitter";
+  font-style: italic;
+  width: 100%;
+  margin: auto;
 }
 
+.tz-kontakt{
+  padding: 0;
+}
+
+.fa-facebook-f{
+  color: #4e71ba ;
+}
+
+.fa-twitter{
+  color: #1DA1F2;
+}
+
+.fa-google-plus-g{
+  color:#db4a39 ;
+}
+
+.fa-linkedin-in{
+  color: #1293d2 ;
+}
+
+.fb-like{
+  width: 50%;
+  margin: auto;
+  color: rgb(255, 255, 255);
+}
 
 /* END KONTAKT */
+
+/* START O NAMA */
+
+.page-description{
+  margin-bottom: 2em;
+  color: rgb(0, 0, 0);
+  font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.about_slika{
+  width: 50%;
+  margin: auto;
+}
+
+.tekst{
+  border-left: 6px solid #8155BA;
+  width: 50%;
+  margin: auto;
+}
+
+.tekst p{
+  color: rgb(0, 0, 0);
+  font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
+  /* font-family: "Bitter-reg"; */
+  font-size: 1.2em;
+  text-align: justify;
+  text-indent: 1cm;
+  line-height: 1.6;
+}
