@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PetKeeper.Data
 {
-    public partial class AspNetUsers
+    public partial class AspNetUsers : AspNetUserRoles
     {
         public AspNetUsers()
         {
@@ -35,5 +35,29 @@ namespace PetKeeper.Data
         public virtual ICollection<AspNetUserRoles> AspNetUserRoles { get; set; }
         public virtual ICollection<AspNetUserTokens> AspNetUserTokens { get; set; }
         public virtual ICollection<Podaci> Podaci { get; set; }
+
+        public AspNetUserClaims AspNetUserClaims1
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public AspNetUserLogins AspNetUserLogins1
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public AspNetUserTokens AspNetUserTokens1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

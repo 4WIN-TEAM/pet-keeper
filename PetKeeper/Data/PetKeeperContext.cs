@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace PetKeeper.Data
 {
-    public partial class PetKeeperContext : Podaci
+    public partial class PetKeeperContext : AspNetUsers
     {
         public PetKeeperContext()
         {

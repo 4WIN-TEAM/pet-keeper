@@ -47,5 +47,21 @@ namespace PetKeeper.Data
             {
             }
         }
+
+        public AspNetUsers AspNetUsers
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public AspNetUsers AspNetUsers1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
