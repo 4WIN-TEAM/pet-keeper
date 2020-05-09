@@ -350,6 +350,13 @@ p {
   font-size: 1.1em;
 }
 
+.card{
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 9px 2px rgba(82,82,82,1);
+  -moz-box-shadow: 0px 0px 9px 2px rgba(82,82,82,1);
+  box-shadow: 0px 0px 9px 2px rgba(82,82,82,1);
+}
+
 /* .btn-reserve{
   background-color: #c0c0c0;
 } */
@@ -386,6 +393,7 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
 .text-center{
   margin-top: 40px;
 }
+
 
 .kontakt-row{
   background-color: #8200be65;
@@ -434,16 +442,26 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
   margin-bottom: 2em;
   color: rgb(0, 0, 0);
   font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px #000000;
 }
 
+.kontakt-naslov{
+  color: #392853;
+  text-shadow: 1px 1px 2px #e6e6e6;
+
+}
+
+
 .about_slika{
-  width: 50%;
+  width: 100%;
   margin: auto;
 }
 
 .tekst{
-  border-left: 6px solid #8155BA;
-  width: 50%;
+  border-left: 6px solid rgb(255, 255, 255);
+  width: 100%;
   margin: auto;
 }
 
@@ -451,8 +469,10 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
   /* font-family: "Bitter-reg"; */
-  font-size: 1.2em;
+  font-size: 1.3em;
   text-align: justify;
   text-indent: 1cm;
   line-height: 1.6;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 2px #000000;
 }

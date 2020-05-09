@@ -6,11 +6,18 @@
 } */
 
 .container-fluid.gallery-container,.container.gallery-container {
-    background-color: #fff;
+    background-color: rgba(70, 51, 95, 0.349);
     color: #35373a;
     min-height: 100vh;
     border-radius: 20px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+    border: rgba(52, 29, 71, 0.178) 1px solid;
+    margin-top: 50px;
+}
+
+.container.about-container{
+    background-color: rgb(255, 255, 255);
+
 }
 
 .gallery-container h1 {
@@ -28,6 +35,11 @@
     font-size: 18px;
 }
 
+.kontakt-naslov{
+    color: #000000;
+  }
+  
+
 .tz-gallery {
     padding: 40px;
 }
@@ -37,6 +49,9 @@
     margin-bottom: 30px;
     transition: 0.2s ease-in-out;
     box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 9px 2px rgba(82,82,82,1);
+    -moz-box-shadow: 0px 0px 9px 2px rgba(82,82,82,1);
+    box-shadow: 0px 0px 9px 2px rgba(82,82,82,1);
 }
 
 
@@ -46,7 +61,7 @@
 }
 
 .tz-gallery img {
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .baguetteBox-button {
