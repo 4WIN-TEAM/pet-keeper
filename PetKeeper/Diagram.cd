@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PetKeeper.Data.ApplicationDbContext">
+    <Position X="21" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\ApplicationDbContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ApplicationDbContextModelSnapshot" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PetKeeper.Data.AspNetRoleClaims">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAIAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Data\AspNetRoleClaims.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PetKeeper.Data.AspNetRoles">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAQAAAAAAAAQAAAAAAAAACBAABAAAAAA=</HashCode>
+      <FileName>Data\AspNetRoles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PetKeeper.Data.AspNetUserClaims">
+    <Position X="19.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAAAQAAAAAgAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Data\AspNetUserClaims.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PetKeeper.Data.AspNetUserLogins">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAgAAAAAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Data\AspNetUserLogins.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PetKeeper.Data.AspNetUserRoles">
+    <Position X="16" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAIAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\AspNetUserRoles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PetKeeper.Data.AspNetUsers">
+    <Position X="11.25" Y="0.5" Width="1.75" />
+    <InheritanceLine Type="PetKeeper.Data.AspNetUserRoles" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.75" Y="3.5" />
+        <Point X="16.75" Y="2.975" />
+        <Point X="13.638" Y="2.975" />
+        <Point X="13.638" Y="2.125" />
+        <Point X="13.625" Y="2.125" Type="JumpStart" />
+        <Point X="13.458" Y="2.125" Type="JumpEnd" />
+        <Point X="13.458" Y="2.125" Type="JumpStart" />
+        <Point X="13.292" Y="2.125" Type="JumpEnd" />
+        <Point X="13" Y="2.125" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="AspNetUserClaims1" Type="PetKeeper.Data.AspNetUserClaims" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13" Y="1.653" />
+        <Point X="13.542" Y="1.653" />
+        <Point X="13.542" Y="3.162" />
+        <Point X="16.667" Y="3.162" Type="JumpStart" />
+        <Point X="16.833" Y="3.162" Type="JumpEnd" />
+        <Point X="17.604" Y="3.162" Type="JumpStart" />
+        <Point X="17.771" Y="3.162" Type="JumpEnd" />
+        <Point X="19.396" Y="3.162" />
+        <Point X="19.396" Y="2.373" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="AspNetUserLogins1" Type="PetKeeper.Data.AspNetUserLogins" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13" Y="1.845" />
+        <Point X="13.375" Y="1.845" />
+        <Point X="13.375" Y="4.436" />
+        <Point X="14.25" Y="4.436" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="AspNetUserTokens1" Type="PetKeeper.Data.AspNetUserTokens" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13" Y="2.312" />
+        <Point X="13.292" Y="2.312" Type="JumpStart" />
+        <Point X="13.458" Y="2.312" Type="JumpEnd" />
+        <Point X="13.458" Y="2.312" Type="JumpStart" />
+        <Point X="13.721" Y="2.312" Type="JumpEnd" />
+        <Point X="15.688" Y="2.312" />
+        <Point X="15.688" Y="3.048" />
+        <Point X="17.688" Y="3.048" />
+        <Point X="17.688" Y="5.716" />
+        <Point X="18.5" Y="5.716" />
+        <Point X="18.5" Y="5.623" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>QACCAAAIBCAAoEAIAgBAQAABQAAAQAAoARQABAAAAQA=</HashCode>
+      <FileName>Data\AspNetUsers.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AspNetUserClaims1" />
+      <Property Name="AspNetUserLogins1" />
+      <Property Name="AspNetUserTokens1" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PetKeeper.Data.AspNetUserTokens">
+    <Position X="17.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAwAAAAAEAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Data\AspNetUserTokens.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PetKeeper.Data.PetKeeperContext">
+    <Position X="0.5" Y="0.75" Width="1.75" />
+    <AssociationLine Name="Pol1" Type="PetKeeper.Data.Pol" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.312" />
+        <Point X="2.271" Y="3.312" Type="JumpStart" />
+        <Point X="2.438" Y="3.312" Type="JumpEnd" />
+        <Point X="2.49" Y="3.312" />
+        <Point X="2.49" Y="0.489" />
+        <Point X="2.511" Y="0.489" Type="JumpStart" />
+        <Point X="2.678" Y="0.489" Type="JumpEnd" />
+        <Point X="5.5" Y="0.489" />
+        <Point X="5.5" Y="0.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Rasa1" Type="PetKeeper.Data.Rasa" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.5" />
+        <Point X="2.271" Y="3.5" Type="JumpStart" />
+        <Point X="2.438" Y="3.5" Type="JumpEnd" />
+        <Point X="2.594" Y="3.5" />
+        <Point X="2.594" Y="0.27" />
+        <Point X="7.062" Y="0.27" />
+        <Point X="7.062" Y="0.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Status1" Type="PetKeeper.Data.Status" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.687" />
+        <Point X="2.355" Y="3.687" />
+        <Point X="2.355" Y="0.218" />
+        <Point X="9" Y="0.218" />
+        <Point X="9" Y="0.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Sterilisan1" Type="PetKeeper.Data.Sterilisan" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.938" />
+        <Point X="2.594" Y="3.938" />
+        <Point X="2.594" Y="5.356" />
+        <Point X="3.417" Y="5.356" Type="JumpStart" />
+        <Point X="3.583" Y="5.356" Type="JumpEnd" />
+        <Point X="4.521" Y="5.356" Type="JumpStart" />
+        <Point X="4.688" Y="5.356" Type="JumpEnd" />
+        <Point X="5.667" Y="5.356" Type="JumpStart" />
+        <Point X="5.833" Y="5.356" Type="JumpEnd" />
+        <Point X="9" Y="5.356" />
+        <Point X="9" Y="5.19" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Vakcinisan1" Type="PetKeeper.Data.Vakcinisan" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="4.125" />
+        <Point X="2.594" Y="4.125" />
+        <Point X="2.594" Y="5.44" />
+        <Point X="3.417" Y="5.44" Type="JumpStart" />
+        <Point X="3.583" Y="5.44" Type="JumpEnd" />
+        <Point X="4.521" Y="5.44" Type="JumpStart" />
+        <Point X="4.688" Y="5.44" Type="JumpEnd" />
+        <Point X="5.75" Y="5.44" />
+        <Point X="5.75" Y="5.19" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ACQAAAAUAQiAgEAAAgBAAAAAEADAQABACBAAgAAAAAE=</HashCode>
+      <FileName>Data\PetKeeperContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pol1" />
+      <Property Name="Rasa1" />
+      <Property Name="Status1" />
+      <Property Name="Sterilisan1" />
+      <Property Name="Vakcinisan1" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PetKeeper.Data.Podaci">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="PetKeeper.Data.Rasa" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="1.688" />
+        <Point X="6.377" Y="1.688" />
+        <Point X="6.377" Y="2.938" />
+        <Point X="4.25" Y="2.938" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Vakcinisan1" Type="PetKeeper.Data.Vakcinisan" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="4.875" />
+        <Point X="4.474" Y="4.875" />
+        <Point X="4.474" Y="4.24" />
+        <Point X="4.521" Y="4.24" Type="JumpStart" />
+        <Point X="4.688" Y="4.24" Type="JumpEnd" />
+        <Point X="4.826" Y="4.24" />
+        <Point X="4.826" Y="4.125" />
+        <Point X="5" Y="4.125" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Sterilisan1" Type="PetKeeper.Data.Sterilisan" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="3.875" />
+        <Point X="4.62" Y="3.875" />
+        <Point X="4.62" Y="3.062" />
+        <Point X="7.875" Y="3.062" />
+        <Point X="7.875" Y="4.188" />
+        <Point X="8.25" Y="4.188" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Pol1" Type="PetKeeper.Data.Pol" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="2.687" />
+        <Point X="4.49" Y="2.687" />
+        <Point X="4.49" Y="1.688" />
+        <Point X="4.75" Y="1.688" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="AspNetUsers" Type="PetKeeper.Data.AspNetUsers" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="4.125" />
+        <Point X="4.604" Y="4.125" />
+        <Point X="4.604" Y="5.792" />
+        <Point X="9.014" Y="5.792" />
+        <Point X="9.014" Y="5.188" />
+        <Point X="10.792" Y="5.187" Type="JumpStart" />
+        <Point X="10.958" Y="5.188" Type="JumpEnd" />
+        <Point X="11.25" Y="5.188" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ACADAAAcQAgAAEAQACAABBgAAADAAABAAQCAAAAAAAA=</HashCode>
+      <FileName>Data\Podaci.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Vakcinisan1" />
+      <Property Name="Sterilisan1" />
+      <Property Name="Pol1" />
+      <Property Name="AspNetUsers" />
+      <Property Name="AspNetUsers1" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PetKeeper.Data.Pol">
+    <Position X="4.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Pol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PetKeeper.Data.Rasa">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Rasa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PetKeeper.Data.Status">
+    <Position X="8.25" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="PetKeeper.Data.Podaci" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="3.5" />
+        <Point X="4.542" Y="3.5" />
+        <Point X="4.542" Y="3.135" />
+        <Point X="8.127" Y="3.135" />
+        <Point X="8.127" Y="1.75" />
+        <Point X="8.25" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PetKeeper.Data.Sterilisan">
+    <Position X="8.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Sterilisan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PetKeeper.Data.Vakcinisan">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Vakcinisan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PetKeeper.Data.Migrations.ApplicationDbContextModelSnapshot">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Data\Migrations\ApplicationDbContextModelSnapshot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

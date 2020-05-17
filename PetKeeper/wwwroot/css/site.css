@@ -12,11 +12,11 @@ a.navbar-brand {
 html {
   font-size: 14px;
 }
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
     .container {
         max-width: 2036px;
     }
-}
+} */
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -38,7 +38,7 @@ button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
-
+ 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -51,7 +51,7 @@ body {
   margin-bottom: 60px;
 }
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
@@ -65,6 +65,18 @@ body {
   font-family: "Bitter";
 src: url("../fonts/Bitter-Bold.otf")
 }
+
+@font-face{
+  font-family: "Bitter-reg";
+src: url("../fonts/Bitter-Regular.otf")
+}
+
+@font-face{
+  font-family: "SourceSansPro";
+src: url("../fonts/SourceSansPro-Regular.ttf")
+}
+
+
 
 /* pozadinska boja */
 .bg-primary{
@@ -88,21 +100,28 @@ body {
   margin-left: 10px;
   font-family:"Bitter";
   font-weight: bolder;
-  font-size: 2vw;
+  font-size: 2.5em;
 }
 
 /* centriranje menija na sredinu */
  .navbar-nav{
    margin-left: 20px;
-   font-size: 1vw;
   /* text-align: center;
   justify-content: center; */
 }
 
 /* font texta navigation bara */
 .text-light {
-  font-family:"Bitter";
-  font-size: 1vw;
+  /* font-family:"Bitter"; */
+  font-size: 1.7vh;
+  font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
+
+}
+
+@media (max-width: 1200px){
+  .text-light{
+    font-size: 0.8em;
+  }
 }
 /* END NAVIGATION BAR */
 
@@ -122,21 +141,26 @@ body {
   background-color: #9900ff00;
   color: #FFFFFF;
 text-shadow: 0 0 3px rgb(255, 255, 255);
-
 }
+
+@media (max-width: 1200px){
+  .naslov{
+    font-size: 1.3em;
+  }
+}
+
 
 /* tekst ispod naslova */
 .naslov_ispod{
   font-size: 1.5vw;
   text-align: center;
   background: rgba(52, 35, 68, 0.678);
-
-
 }
 
-.front-all{
-  margin-top: 2%;
-  margin-bottom: 0%;
+@media (max-width: 1200px){
+  .naslov_ispod{
+    font-size: 1em;
+  }
 }
 
 /* divs sa leve strane */
@@ -144,12 +168,11 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
   font-family: "Bitter";
   font-style: italic;
   color: #ffffff;
-  /*background-color:#CB8AFF;*/
 }
 
 /* margina od navigation bar-a */
 .front-centar{
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 /* centralna slika */
@@ -172,7 +195,7 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
 }
 
 .section2-container{
-  padding-top: 30px;;
+  padding-top: 30px;
   padding-left: 7%;
   padding-right: 7%;
   /* background-color: #6c5b799f; */
@@ -248,8 +271,14 @@ text-shadow: 0 0 3px rgb(255, 255, 255);
   padding: 0;
   margin: 0 0 3px !important;
   /* background-color: #BEAFC2; */
-
 }
+
+@media (max-width: 1200px){
+  .list1_title1{
+    font-size: 1.3em;
+  }
+}
+
 
 /* tekst ispod slike */
 p {
@@ -267,9 +296,16 @@ p {
 
 .btn-sm {
     border-radius: 3px;
-    width: 100px;
+    width: auto;
     font-weight: bold;
 }
+
+@media (max-width: 1400px){
+  .btn-sm{
+  font-size: 0.9em;
+}
+}
+
 
 .btn-danger {
   background-color: #ff3333;
@@ -278,7 +314,165 @@ p {
 /* START REZERVACIJE */
 /* tabela */
 .rezervacije-tbl{
-  background-color: rgba(255, 255, 255, 0.822);
+  background-color:#f3f3f3;
   color: rgb(65, 65, 65);
+  font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  margin: auto;
+  width: 50% !important;
+}
+
+@media (max-width: 1400px){
+  .rezervacije-tbl{
+    font-size: 0.9em;
+  }
+}
+
+.btn-kreiraj{
+  display: flex;
+  justify-content: center;
+  font-family: "Bitter";
+  border-radius: 7px;
+  
+}
+
+.btn-kreiraj h4{
+  margin-bottom: 0;
+}
+
+.btn-kreiraj button{
+  background-color: #a991d4;
+  color: #ffffff;
+}
+
+.podaci p{
+  font-family: "Bitter";
+  font-size: 1.1em;
+}
+
+.card{
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 9px 2px rgba(82,82,82,1);
+  -moz-box-shadow: 0px 0px 9px 2px rgba(82,82,82,1);
+  box-shadow: 0px 0px 9px 2px rgba(82,82,82,1);
+}
+
+/* .btn-reserve{
+  background-color: #c0c0c0;
+} */
+/* END REZERVACIJE */
+
+/* START LOGIN */
+.login-scr{
+  padding: 20px;
+  max-width: 70%;
+  margin: auto;
+  margin-top: 150px;
+  background-color:whitesmoke ;
+  color: #332548;
+  font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+/* END LOGIN */
+
+/* START KONTAKT */
+.kontakt_naslov{
+  text-align: center;
   width: auto;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Bitter";
+  font-style: italic;
+  font-size: 4vw;
+  color: #463266;
+  color: #FFFFFF;
+text-shadow: 0 0 3px rgb(255, 255, 255);
+}
+
+.text-center{
+  margin-top: 40px;
+}
+
+
+.kontakt-row{
+  background-color: #8200be65;
+}
+
+.kontakt-main{
+  background-color: #e3ded2b0;
+  text-align: center;
+  font-family: "Bitter";
+  font-style: italic;
+  width: 100%;
+  margin: auto;
+}
+
+.tz-kontakt{
+  padding: 0;
+}
+
+.fa-facebook-f{
+  color: #4e71ba ;
+}
+
+.fa-twitter{
+  color: #1DA1F2;
+}
+
+.fa-google-plus-g{
+  color:#db4a39 ;
+}
+
+.fa-linkedin-in{
+  color: #1293d2 ;
+}
+
+.fb-like{
+  width: 50%;
+  margin: auto;
+  color: rgb(255, 255, 255);
+}
+
+/* END KONTAKT */
+
+/* START O NAMA */
+
+.page-description{
+  margin-bottom: 2em;
+  color: rgb(0, 0, 0);
+  font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.kontakt-naslov{
+  color: #392853;
+  text-shadow: 1px 1px 2px #e6e6e6;
+
+}
+
+
+.about_slika{
+  width: 100%;
+  margin: auto;
+}
+
+.tekst{
+  border-left: 6px solid rgb(255, 255, 255);
+  width: 100%;
+  margin: auto;
+}
+
+.tekst p{
+  color: rgb(0, 0, 0);
+  font-family: 'SourceSansPro','Helvetica Neue',Helvetica,Arial,sans-serif;
+  /* font-family: "Bitter-reg"; */
+  font-size: 1.3em;
+  text-align: justify;
+  text-indent: 1cm;
+  line-height: 1.6;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 2px #000000;
 }

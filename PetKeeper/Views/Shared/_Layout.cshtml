@@ -8,6 +8,30 @@
     <environment include="Development">
         <link href="~/lib/bootswatch/pulse/bootstrap.css" rel="stylesheet" />
         <link href="~/css/site.css" rel="stylesheet" />
+        <!--===============================================================================================-->
+            <link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="/vendor/daterangepicker/daterangepicker.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="/css/util.css">
+            <link rel="stylesheet" type="text/css" href="/css/main.css">
+            <link rel="stylesheet" type="text/css" href="/css/gallery-grid.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css"> 
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+            <link href="~/css/site.css" rel="stylesheet" />
+        <!--===============================================================================================-->
     </environment>
     <environment exclude="Development">
         <link href="~/css/site.css" rel="stylesheet" />
@@ -22,7 +46,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary" border-bottom box-shadow mb-3>
+        <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-dark bg-primary" border-bottom box-shadow mb-3>
             <div class="container-fluid">
                 <img src="/images/logo.png" class="img-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PetKeeper</a>
@@ -30,7 +54,7 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <div class="navbar-collapse collapse d-lg-inline-flex flex-lg-row-reverse">
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -38,6 +62,15 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Reservation" asp-action="Index">Rezervacija</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Gallery">Galerija</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="About">O nama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Contact">Kontakt</a>
                         </li>
                         <li class="nav-item dropdown">
                             @if (User.Identity.IsAuthenticated)
@@ -58,7 +91,7 @@
             </div>
         </nav>
     </header>
-    <div class="container-fluid p-0">
+    <div class="container-flex p-0">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()

@@ -1,279 +1,137 @@
 ﻿@model IEnumerable<PetKeeper.Models.PodaciViewModel>
 
-@{
+    @{
     var podaciViewModel = new PodaciViewModel() { };
-}
-<partial name="_CreatePartial" for="@podaciViewModel">
+    }
+    <partial name="_CreatePartial" for="@podaciViewModel">
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-backdrop="static"
-            data-keyboard="false" style="margin: 6px">
-        &nbsp;Kreiraj
-    </button>
-    <div id="openModal">
 
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div>
-                <table class="table rezervacije-tbl table-responsive-md btn-table ">
-                    <thead class="thead-light">
-                        <tr>
-                            <th>
-                                Korisniik
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Ime)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Starost)
-                            </th>
-                            <th>
-                                Datum prijema
-                            </th>
-                            <th>
-                                Datum odjave
-                            </th>
+        <div id="openModal"></div>
 
-                            <th>
-                                @Html.DisplayNameFor(model => model.Rasa)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Pol)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Sterilisan)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Vakcinisan)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Status)
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        @if (User.Identity.IsAuthenticated)
+        {
+
+        @if (User.IsInRole("Admin"))
+        {
+            @* START REZERVACIJA ADMIN *@
+        <div class=" container-fluid gallery-container">
+            <div class="tz-gallery">
+                <h2 class="page-description text-center">Administracija napravljenih rezervacija</h2>
+                <div class="col-lg-12 col-auto">
+                    <div class="table-responsive">
+                        <table class="table text-nowrap rezervacije-tbl table-borderless">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th> Korisnik </th>
+                                    <th> @Html.DisplayNameFor(model => model.Ime)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Starost)</th>
+                                    <th>Datum prijema</th>
+                                    <th>Datum odjave</th>
+                                    <th>@Html.DisplayNameFor(model => model.Rasa)</th>
+                                    <th>@Html.DisplayNameFor(model => model.Pol)</th>
+                                    <th>@Html.DisplayNameFor(model => model.Sterilisan)</th>
+                                    <th>@Html.DisplayNameFor(model => model.Vakcinisan)</th>
+                                    <th>@Html.DisplayNameFor(model => model.Status)</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr class="@(item.Status.ToString() == "Odbijeno" ? "table-warning" : "" )">
+                                    <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Ime)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Starost)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.DatumPrijema)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.DatumOdjave)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Rasa)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Pol)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Sterilisan)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Vakcinisan)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-primary btn-sm"
+                                            onclick="getEdit(@item.Id)">Izmeni</button>
+                                        <button type="button" class="btn btn-outline-info btn-sm m-0"
+                                            onclick="getDetails(@item.Id)">Detalji</button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm m-0"
+                                            onclick="getDeleted(@item.Id)">Izbriši</button>
+                                    </td>
+                                </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+            @* END REZERVACIJA ADMIN *@
+        } else
+        {
+            @* START REZERVACIJA KORISNIK *@
+        <div class=" container gallery-container">
+                <h2 class="page-description text-center">VAŠE REZERVACIJE</h2>
+                <div class="container-flex section2-container">
+                    <div class="row section2-row">
                         @foreach (var item in Model)
                         {
-                            @if (item.Status.ToString() == "Odbijeno")
-                            {
-                        <tr class="table-active">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.UserName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Ime)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Starost)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DatumPrijema)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DatumOdjave)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Rasa)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Pol)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Sterilisan)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Vakcinisan)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Status)
-                            </td>
-                            <td>
-                                @if (User.Identity.IsAuthenticated)
-                                {
-                                    @if (User.IsInRole("Admin"))
-                                    {
-                                        <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                                onclick="getEdit(@item.Id)">
-                                            Izmeni
-                                        </button>
-                                        <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                                onclick="getDetails(@item.Id)">
-                                            Detalji
-                                        </button>
-                                        <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
-                                                onclick="getDeleted(@item.Id)">
-                                            Izbriši
-                                        </button>
-                                    }
-                                    else
-                                    {
-                                        @if (item.Status.ToString() == "Prihvaćeno")
-                                        {
-                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                                    onclick="getEdit(@item.Id)" disabled>
-                                                Izmeni
-                                            </button>
-                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                                    onclick="getDetails(@item.Id)">
-                                                Detalji
-                                            </button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
-                                                    disabled>
-                                                Izbriši
-                                            </button>
-                                        }
-                                        else if (item.Status.ToString() == "Odbijeno")
-                                        {
-                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                                    onclick="getEdit(@item.Id)" disabled>
-                                                Izmeni
-                                            </button>
-                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect" onclick="getDetails(@item.Id)"
-                                                    disabled>
-                                                Detalji
-                                            </button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
-                                                    disabled>
-                                                Izbriši
-                                            </button>
-                                        }
-                                        else
-                                        {
-                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                                    onclick="getEdit(@item.Id)">
-                                                Izmeni
-                                            </button>
-                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                                    onclick="getDetails(@item.Id)">
-                                                Detalji
-                                            </button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
-                                                    onclick="getDeleted(@item.Id)">
-                                                Izbriši
-                                            </button>
-                                        }
-                                    }
-                                }
-                            </td>
-                        </tr>
-                            }
-                            else
-                            {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.UserName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Ime)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Starost)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DatumPrijema)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DatumOdjave)
-                            </td>
-
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Rasa)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Pol)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Sterilisan)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Vakcinisan)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Status)
-                            </td>
-                            <td>
-                                @if (User.Identity.IsAuthenticated)
-                                {
-                                    @if (User.IsInRole("Admin"))
-                                    {
-                                        <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                                onclick="getEdit(@item.Id)">
-                                            Izmeni
-                                        </button>
-                                        <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                                onclick="getDetails(@item.Id)">
-                                            Detalji
-                                        </button>
-                                        <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
-                                                onclick="getDeleted(@item.Id)">
-                                            Izbriši
-                                        </button>
-                                    }
-                                    else
-                                    {
-                                        @if (item.Status.ToString() == "Prihvaćeno")
-                                        {
-                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                                    onclick="getEdit(@item.Id)" disabled>
-                                                Izmeni
-                                            </button>
-                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                                    onclick="getDetails(@item.Id)">
-                                                Detalji
-                                            </button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
-                                                    disabled>
-                                                Izbriši
-                                            </button>
-                                        }
-                                        else if (item.Status.ToString() == "Odbijeno")
-                                        {
-                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                                    onclick="getEdit(@item.Id)" disabled>
-                                                Izmeni
-                                            </button>
-                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect" onclick="getDetails(@item.Id)"
-                                                    disabled>
-                                                Detalji
-                                            </button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect" onclick="getDeleted(@item.Id)"
-                                                    disabled>
-                                                Izbriši
-                                            </button>
-                                        }
-                                        else
-                                        {
-                                            <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect"
-                                                    onclick="getEdit(@item.Id)">
-                                                Izmeni
-                                            </button>
-                                            <button type="button" class="btn btn-outline-info btn-sm m-0 waves-effect"
-                                                    onclick="getDetails(@item.Id)">
-                                                Detalji
-                                            </button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm m-0 waves-effect"
-                                                    onclick="getDeleted(@item.Id)">
-                                                Izbriši
-                                            </button>
-                                        }
-                                    }
-                                }
-                            </td>
-                        </tr>
-                            }
+                         @* START KARTICA *@
+                        <div class="col-xl-4 col-lg-6 col-md-6 mb-3">
+                            <div class="card text-white bg-card2 mb-3 h-100">
+                                <div class="card-header">
+                                    <h4 class="list1_title1 @(item.Status.ToString()=="Odbijeno" ? "bg-danger"
+                                 : item.Status.ToString()=="Prihvaćeno" ? "bg-success" : "")">@Html.DisplayFor(modelItem => item.Ime)</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="thumbnail">
+                                        <img class="img-thumbnail1" src="images/druzenje.jpg" alt="kuca1">
+                                        <div class="caption caption_list1 maxheight">
+                                            <div class="box_inner podaci">
+                                                <p class="">Prijem: @Html.DisplayFor(modelItem => item.DatumPrijema)
+                                                </p>
+                                                <p class="">Odjava: @Html.DisplayFor(modelItem => item.DatumOdjave) </p>
+                                                <p class="">Rasa: @Html.DisplayFor(modelItem => item.Rasa) </p>
+                                                <p class="">Status: @Html.DisplayFor(modelItem => item.Status) </p>
+                                            </div>
+                                        </div>
+                                        @* START BUTTON GRUPA *@
+                                        <div class="btn-reserve text-center">
+                                        <button type="button" class="btn btn-primary" onclick="getEdit(@item.Id)"
+                                            @(item.Status.ToString()=="Odbijeno" ||item.Status.ToString()=="Prihvaćeno"
+                                            ? "Disabled" : "" )><i class="fas fa-2x fa-edit"></i></button>
+                                        <button type="button" class="btn btn-info"
+                                            onclick="getDetails(@item.Id)" @(item.Status.ToString()=="Odbijeno"
+                                            ? "Disabled" : "" )><i class="fas fa-2x fa-info-circle"></i></button>
+                                        <button type="button" class="btn btn-danger"
+                                            onclick="getDeleted(@item.Id)" @(item.Status.ToString()=="Odbijeno"
+                                            ||item.Status.ToString()=="Prihvaćeno" ? "Disabled" : "" )><i class="fas fa-2x fa-trash-alt"></i></button>
+                                        </div>   
+                                        @* END BUTTON GRUPA *@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         @* END KARTICA *@
                         }
-                    </tbody>
-                </table>
+                    </div>
+                </div>
+            <div class="btn-kreiraj">
+                <button type="button" class="btn btn-kreiraj" data-toggle="modal" data-target="#myModal"
+                    data-backdrop="static" data-keyboard="false" style="margin: 6px;">
+                    <h4> KREIRAJ NOVU REZERVACIJU</h4>
+                </button>
             </div>
-            <div class="col-sm-2"></div>
-
         </div>
-    </div>
+        @* END REZERVACIJA KORISNIK *@
+        }
+        }
 
 
-    @section Scripts {
+
+
+
+        @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
         <script type="text/javascript">
@@ -344,6 +202,7 @@
                     });
                 }
             });
+
             function getEdit(id) {
                 $.ajax({
                     dataType: "html",
@@ -431,6 +290,7 @@
                     }
                 });
             }
+
             function getDetails(id) {
                 $.ajax({
                     dataType: "html",
@@ -459,6 +319,7 @@
                     }
                 });
             }
+
             function getDeleted(id) {
                 bootbox.confirm({
                     message: "Do you want to delete this?",
@@ -509,4 +370,4 @@
                 });
             }
         </script>
-    }
+        }

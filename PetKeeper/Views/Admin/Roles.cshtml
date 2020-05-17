@@ -1,46 +1,51 @@
 ﻿@model IEnumerable<PetKeeper.Models.RoleViewModel>
 
 
-@{
+    @{
     ViewData["Title"] = "Roles";
-}
+    }
 
-<h1>Role</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 login-scr ">
+                <h2>Uloge</h2> <br>
+                <a asp-action="Create"><button type="button" class="btn btn-primary">Kreiraj novu ulogu</button></a>
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id uloge</th>
+                                <th>Ime uloge</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.RoleId)</td>
+                                <td>@Html.DisplayFor(modelItem => item.RoleName)</td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.RoleId"><i class="fas fa-2x fa-edit"></i>&nbsp;&nbsp;</a>
+                                    <a asp-action="Details" asp-route-id="@item.RoleId"><i class="fas fa-2x fa-info-circle"></i>&nbsp;&nbsp;</a>
+                                    <a asp-action="Delete" asp-route-id="@item.RoleId"><i class="fas fa-2x fa-trash-alt"></i>&nbsp;&nbsp;</a>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
-<p>
-    <a asp-action="Create">Kreiraj novu rolu</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Id role
-            </th>
-            <th>
-               Ime role
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.RoleId)</td>
-                <td>@Html.DisplayFor(modelItem => item.RoleName)</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.RoleId">Izmeni</a> |
-                    <a asp-action="Details" asp-route-id="@item.RoleId">Detalji</a> |
-                    <a asp-action="Delete" asp-route-id="@item.RoleId">Izbriši</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-@section Scripts {
+
+
+    @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
     <script type="text/javascript">
 
     </script>
-}
+    }
